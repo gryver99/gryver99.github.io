@@ -92,10 +92,10 @@ function parseCSV(text) {
     if (char === '"') {
       insideQuotes = !insideQuotes;
     } else if (char === "," && !insideQuotes) {
-      current.push(value);
+      current.push(value.trim());
       value = "";
     } else if (char === "\n" && !insideQuotes) {
-      current.push(value);
+      current.push(value.trim());
       rows.push(current);
       current = [];
       value = "";
@@ -111,14 +111,22 @@ async function loadData() {
   const text = await res.text();
 
   const rows = parseCSV(text);
-  const headers = rows[0];
+  const headers = rows[0].map(h => h.trim());
   const items = rows.slice(1).map(row => {
     const obj = {};
-    headers.forEach((h, i) => obj[h] = row[i] || "");
+    headers.forEach((h, i) => obj[h] = (row[i] || "").trim());
     return obj;
   });
 
-  items.sort((a, b) => new Date(b.date) - new Date(a.date));
+  // Conversione automatica della data
+  items.forEach(item => {
+    if (item.date) {
+      const d = new Date(item.date);
+      if (!isNaN(d)) {
+        item.date = d.toISOString().split("T")[0];
+      }
+    }
+  });
 
   const container = document.getElementById("timeline");
   container.innerHTML = "";
@@ -132,7 +140,7 @@ async function loadData() {
     div.innerHTML = `
       <img src="${img}" alt="">
       <div class="entry-title">${item.title}</div>
-      <div class="entry-date">${item.date}</div>
+      <div class="entry-date">${item.date || "Data non disponibile"}</div>
       <div class="entry-desc">${item.description}</div>
       <a href="${item.url}" target="_blank">Vai alla pagina</a>
     `;
@@ -143,7 +151,3 @@ async function loadData() {
 
 loadData();
 </script>
-
-
-</body>
-</html>

@@ -82,7 +82,6 @@
 <script>
 const DATA_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS6qbDeXYiws1fG8LR30qmPQX50zqfrY1xW540_BRw-jkEJYFLfraVBJZ_VzRjofvjPgIOss4DlQR10/pub?gid=0&single=true&output=csv";
 
-// CSV parser robusto
 function parseCSV(text) {
   const rows = [];
   let current = [];
@@ -119,7 +118,6 @@ async function loadData() {
     return obj;
   });
 
-  // Ordina per data
   items.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const container = document.getElementById("timeline");

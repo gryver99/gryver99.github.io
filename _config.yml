@@ -7,7 +7,7 @@ author:
   name: Gryvery
 
 youtube_channel_id: UCo_22HGU2y0F06am8OjeXwg
-youtube_api_key: AIzaSyBOKvW_efXGsWTtV1iROtECX_oDQK_qfvg
+# youtube_api_key: REMOVED
 
 plugins:
   - jekyll-feed

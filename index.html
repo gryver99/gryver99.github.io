@@ -1,0 +1,25 @@
+---
+layout: default
+title: Home
+---
+
+<section class="hero">
+  <div class="hero__bg">
+    <img src="{{ '/assets/images/hero-bg.jpg' | relative_url }}" alt="" aria-hidden="true">
+    <div class="hero__overlay"></div>
+  </div>
+  <div class="hero__content">
+    <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="GameLeaf" class="hero__logo">
+    <p class="hero__tagline">Your portal for indie & mobile games</p>
+    <div class="hero__cta">
+      <a href="{{ '/articles' | relative_url }}" class="btn btn--primary">Read Articles</a>
+      <a href="https://www.youtube.com/@Gryvery" target="_blank" class="btn btn--outline">Watch Videos</a>
+    </div>
+  </div>
+  <div class="hero__dragon">
+    <img src="{{ '/assets/images/hero-dragon.webp' | relative_url }}" alt="">
+  </div>
+</section>
+
+{% include video-carousel.html %}
+{% include article-grid.html %}

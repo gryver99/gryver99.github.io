@@ -1,0 +1,18 @@
+// ── Colors ──────────────────────────────────────
+$bg:          #0d0f14;
+$surface:     rgba(255,255,255,0.04);
+$border:      rgba(0, 220, 180, 0.18);
+$accent:      #00ddb4;
+$accent-dim:  rgba(0, 221, 180, 0.55);
+$text:        #c8d0da;
+$muted:       #4e5a6a;
+$glow:        0 0 18px rgba(0,221,180,0.18);
+
+// ── Typography ───────────────────────────────────
+$font-main:   'Inter', 'Segoe UI', sans-serif;
+$font-title:  'Rajdhani', 'Segoe UI', sans-serif;
+$font-mono:   'Space Mono', monospace;
+
+// ── Layout ───────────────────────────────────────
+$max-width:   1200px;
+$navbar-h:    64px;

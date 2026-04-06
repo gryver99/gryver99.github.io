@@ -1,2 +1,25 @@
-theme: minima
-title: GameLeaf Space
+title: GameLeaf
+description: Your portal for indie and mobile games
+url: "https://gryver99.github.io"
+baseurl: ""
+
+author:
+  name: Gryvery
+
+youtube_channel_id: UCo_22HGU2y0F06am8OjeXwg
+youtube_api_key: AIzaSyBOKvW_efXGsWTtV1iROtECX_oDQK_qfvg
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+theme: null
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

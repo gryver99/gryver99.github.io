@@ -1,6 +1,4 @@
 // netlify/functions/youtube-random.js
-const fetch = require('node-fetch');
-
 const MAX_PAGES = 50;
 const MAX_PER_PAGE = 50;
 

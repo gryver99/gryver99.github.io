@@ -12,13 +12,24 @@ function pickRandom(arr, n) {
   return out;
 }
 
+function jsonResponse(statusCode, payload, extraHeaders = {}) {
+  return {
+    statusCode,
+    headers: Object.assign(
+      { "Content-Type": "application/json" },
+      extraHeaders
+    ),
+    body: JSON.stringify(payload)
+  };
+}
+
 exports.handler = async function(event) {
   const API_KEY = process.env.YT_API_KEY;
   const CHANNEL_ID = process.env.YT_CHANNEL_ID || 'UCo_22HGU2y0F06am8OjeXwg';
   const COUNT = parseInt((event.queryStringParameters && event.queryStringParameters.count) || '15', 10);
 
   if (!API_KEY) {
-    return { statusCode: 500, body: JSON.stringify({ error: 'YT_API_KEY not configured' }) };
+    return jsonResponse(500, { error: 'YT_API_KEY not configured' });
   }
 
   try {
@@ -26,12 +37,13 @@ exports.handler = async function(event) {
     const chRes = await fetch(chUrl);
     if (!chRes.ok) {
       const txt = await chRes.text();
-      return { statusCode: chRes.status, body: txt };
+      // preserve status code from YouTube and return JSON with message
+      return jsonResponse(chRes.status, { error: txt });
     }
     const chData = await chRes.json();
     const uploadsPlaylistId = chData.items && chData.items[0] && chData.items[0].contentDetails.relatedPlaylists.uploads;
     if (!uploadsPlaylistId) {
-      return { statusCode: 500, body: JSON.stringify({ error: 'Uploads playlist not found' }) };
+      return jsonResponse(500, { error: 'Uploads playlist not found' });
     }
 
     let videos = [];
@@ -42,7 +54,7 @@ exports.handler = async function(event) {
       const plRes = await fetch(plUrl);
       if (!plRes.ok) {
         const txt = await plRes.text();
-        return { statusCode: plRes.status, body: txt };
+        return jsonResponse(plRes.status, { error: txt });
       }
       const plData = await plRes.json();
       if (plData.items && plData.items.length) {
@@ -53,7 +65,7 @@ exports.handler = async function(event) {
     } while (pageToken && pages < MAX_PAGES);
 
     if (!videos.length) {
-      return { statusCode: 200, body: JSON.stringify({ items: [] }) };
+      return jsonResponse(200, { items: [] }, { "Cache-Control": "no-cache, no-store, must-revalidate" });
     }
 
     const chosen = pickRandom(videos, Math.min(COUNT, videos.length));
@@ -67,13 +79,9 @@ exports.handler = async function(event) {
       };
     });
 
-    return {
-      statusCode: 200,
-      headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate' },
-      body: JSON.stringify({ items: out })
-    };
+    return jsonResponse(200, { items: out }, { "Cache-Control": "no-cache, no-store, must-revalidate" });
 
   } catch (err) {
-    return { statusCode: 500, body: JSON.stringify({ error: err.message }) };
+    return jsonResponse(500, { error: err && err.message ? err.message : String(err) });
   }
 };

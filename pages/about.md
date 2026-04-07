@@ -13,3 +13,4 @@ permalink: /about/
 - [Support]({{ '/about/support/' | relative_url }})
 - [Terms of Service]({{ '/about/terms-of-service/' | relative_url }})
 - [Privacy Policy]({{ '/about/privacy-policy/' | relative_url }})
+- [Disclaimer]({{ '/about/disclaimer/' | relative_url }})

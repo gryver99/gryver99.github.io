@@ -29,7 +29,7 @@ function buildSlides(videos) {
     slide.className = 'gl-slide';
     slide.innerHTML = `
       <div class="video-wrap">
-        <iframe loading="lazy" src="https://www.youtube.com/embed/${v.videoId}?rel=0&modestbranding=1" title="${escapeHtml(v.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe loading="lazy" src="https://www.youtube.com/embed/${v.id}?rel=0&modestbranding=1" title="${escapeHtml(v.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="video-caption"><h4>${escapeHtml(v.title)}</h4></div>`;
     track.appendChild(slide);

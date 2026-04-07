@@ -1,7 +1,8 @@
 ---
-layout: post
+layout: legal
 title: Privacy Policy – Game Leaf
 ---
+
 
 # Privacy Policy – Game Leaf
 

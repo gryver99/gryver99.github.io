@@ -22,11 +22,11 @@
         <a role="menuitem" href="{{ '/' | relative_url }}">Home</a>
       </li>
 
-      <!-- ABOUT (NO ARROWS) -->
+      <!-- ABOUT DROPDOWN (NO ARROWS) -->
       <li class="navbar__dropdown" role="none">
 
-        <!-- Link About (pulito, senza icone) -->
-        <a class="navbar__dropdown-link" href="{{ '/about/' | relative_url }}" role="menuitem">
+        <!-- Link About -->
+        <a class="navbar__dropdown-link dropdown-trigger" href="{{ '/about/' | relative_url }}" role="menuitem">
           About
         </a>
 
@@ -45,14 +45,7 @@
     <!-- Search -->
     <div class="navbar__search" role="search">
       <form id="navSearchForm" action="{{ '/search' | relative_url }}" method="get">
-        <input
-          type="search"
-          name="q"
-          id="searchInput"
-          class="navbar__search-input"
-          placeholder="Search..."
-          autocomplete="off"
-        >
+        <input type="search" name="q" id="searchInput" class="navbar__search-input" placeholder="Search..." autocomplete="off">
         <button type="submit" class="navbar__search-btn">
           <i class="fas fa-search"></i>
         </button>

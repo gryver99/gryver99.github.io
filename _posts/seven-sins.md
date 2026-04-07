@@ -7,4 +7,6 @@ category: Action RPG
 badge: New
 ---
 
-Testo dell'articolo qui..xxxxx.cccc
+ccccc
+cccc
+cc

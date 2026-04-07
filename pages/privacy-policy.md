@@ -1,6 +1,7 @@
 ---
 layout: legal
 title: Privacy Policy – Game Leaf
+permalink: /about/privacy-policy/
 ---
 
 

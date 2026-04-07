@@ -9,7 +9,7 @@ permalink: /about/who-we-are/
 ## Welcome to Game Leaf  
 ### Your new home for everything mobile gaming!
 
-At **Game Leaf**, we provide fresh news, real-time updates, expert-crafted guides, exclusive gift codes, e-sports coverage, promotions, and links to the best rewards.
+At **GameLeaf**, we provide fresh news, real-time updates, expert-crafted guides, exclusive gift codes, e-sports coverage, promotions, and links to the best rewards.
 
 Our mission is simple:  
 **to help you live your passion for mobile gaming to the fullest.**

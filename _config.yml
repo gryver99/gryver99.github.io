@@ -11,6 +11,7 @@ youtube_channel_id: UCo_22HGU2y0F06am8OjeXwg
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 theme: null
 

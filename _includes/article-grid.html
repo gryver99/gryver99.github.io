@@ -11,12 +11,12 @@
         <circle cx="6.5" cy="6.5" r="4" stroke="currentColor" stroke-width="1.5"/>
         <path d="M10 10l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
-      <input type="text" id="ag-search" class="ag-search" placeholder="Cerca news..." oninput="agSearch()">
+      <input type="text" id="ag-search" class="ag-search" placeholder="search news..." oninput="agSearch()">
     </div>
   </div>
 
   <div class="ag-filters">
-    <button class="ag-filter active" data-f="all" onclick="agFilter('all',this)">Tutti</button>
+    <button class="ag-filter active" data-f="all" onclick="agFilter('all',this)">All</button>
     <button class="ag-filter" data-f="new" onclick="agFilter('new',this)">New</button>
     <button class="ag-filter" data-f="news" onclick="agFilter('news',this)">News</button>
     <button class="ag-filter" data-f="coming soon" onclick="agFilter('coming soon',this)">Coming Soon</button>
@@ -41,7 +41,7 @@
           <div class="ag-badge" data-b="{{ post.badge | downcase }}">{{ post.badge }}</div>
           {% endif %}
           <img
-            src="{{ post.image | default: '/assets/images/placeholder.png' | relative_url }}"
+            src="{{ post.image | default: '/assets/images/placeholder.jpg' | relative_url }}"
             alt="{{ post.title }}"
             loading="lazy">
           <div class="ag-thumb-fade"></div>

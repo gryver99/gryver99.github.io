@@ -3,11 +3,43 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ── Utilities: raccolte in window.Utils per non inquinare il namespace globale ──
+  // Definite subito così sono disponibili per tutti i blocchi successivi.
+  window.Utils = {
+
+    /**
+     * Ritarda l'esecuzione di fn di `wait` ms dopo l'ultimo invocation.
+     * @param {Function} fn
+     * @param {number} wait
+     * @returns {Function}
+     */
+    debounce(fn, wait = 200) {
+      let t;
+      return function (...args) {
+        clearTimeout(t);
+        t = setTimeout(() => fn.apply(this, args), wait);
+      };
+    },
+
+    /**
+     * Aggiunge un event listener in modo sicuro (noop se il selettore non esiste).
+     * @param {string} selector
+     * @param {string} event
+     * @param {Function} handler
+     */
+    safeOn(selector, event, handler) {
+      const el = document.querySelector(selector);
+      if (el) el.addEventListener(event, handler);
+    },
+
+  };
+
   // ── Elements ───────────────────────────────────
   const navToggle = document.getElementById('navToggle');
   const navLinks  = document.getElementById('navLinks');
   const navbar    = document.querySelector('.navbar');
   const navForm   = document.getElementById('navSearchForm');
+  const backToTop = document.getElementById('backToTop');
 
   // Due possibili ID per il campo di ricerca in base alla pagina corrente.
   // Nota: se entrambi esistessero, verrebbe usato il primo ('searchInput').
@@ -204,34 +236,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.addEventListener('keydown', handleFirstTab);
 
-  // ── Utilities: raccolte in window.Utils per non inquinare il namespace globale ──
-  window.Utils = {
+  // ── Back to top ────────────────────────────────
+  // Mostra il pulsante dopo 300px di scroll, nascondilo in cima.
+  // Richiede nell'HTML: <button id="backToTop" aria-label="Torna in cima alla pagina">↑</button>
+  // Richiede nel CSS:
+  //   #backToTop { position:fixed; bottom:2rem; right:2rem; opacity:0; pointer-events:none; transition:opacity .3s ease; }
+  //   #backToTop.is-visible { opacity:1; pointer-events:auto; }
+  if (backToTop) {
+    const VISIBLE_CLASS = 'is-visible';
 
-    /**
-     * Ritarda l'esecuzione di fn di `wait` ms dopo l'ultimo invocation.
-     * @param {Function} fn
-     * @param {number} wait
-     * @returns {Function}
-     */
-    debounce(fn, wait = 200) {
-      let t;
-      return function (...args) {
-        clearTimeout(t);
-        t = setTimeout(() => fn.apply(this, args), wait);
-      };
-    },
+    window.addEventListener('scroll', Utils.debounce(() => {
+      backToTop.classList.toggle(VISIBLE_CLASS, window.scrollY > 300);
+    }, 100), { passive: true });
 
-    /**
-     * Aggiunge un event listener in modo sicuro (noop se il selettore non esiste).
-     * @param {string} selector
-     * @param {string} event
-     * @param {Function} handler
-     */
-    safeOn(selector, event, handler) {
-      const el = document.querySelector(selector);
-      if (el) el.addEventListener(event, handler);
-    },
-
-  };
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // Riporta il focus all'inizio della pagina per accessibilità
+      const firstFocusable = document.querySelector('a, button, [tabindex="0"]');
+      if (firstFocusable) firstFocusable.focus({ preventScroll: true });
+    });
+  }
 
 });

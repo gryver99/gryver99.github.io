@@ -524,3 +524,25 @@ img { max-width: 100%; display: block; }
 main {
   padding-top: $navbar-h; // 64px
 }
+
+#backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  background: #1dbb6c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#backToTop.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}

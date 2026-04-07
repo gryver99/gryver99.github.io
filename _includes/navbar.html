@@ -3,54 +3,77 @@
   <div class="navbar__container">
 
     <!-- Logo -->
-    <a href="{{ '/' | relative_url }}" class="navbar__logo" aria-label="Home">
-      <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="GameLeaf logo" width="40" height="40">
+    <a href="{{ '/' | relative_url }}" class="navbar__logo" aria-label="GameLeaf - Home">
+      <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="" width="40" height="40">
       <span class="navbar__brand">GameLeaf</span>
     </a>
 
     <!-- Mobile toggle -->
-    <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-      <span class="navbar__toggle-bar"></span>
-      <span class="navbar__toggle-bar"></span>
-      <span class="navbar__toggle-bar"></span>
+    <button
+      class="navbar__toggle"
+      id="navToggle"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="navLinks"
+    >
+      <span class="navbar__toggle-bar" aria-hidden="true"></span>
+      <span class="navbar__toggle-bar" aria-hidden="true"></span>
+      <span class="navbar__toggle-bar" aria-hidden="true"></span>
     </button>
 
     <!-- Links -->
-    <ul class="navbar__links" id="navLinks" role="menubar" aria-hidden="true">
+    <ul class="navbar__links" id="navLinks">
 
-      <li role="none">
-        <a role="menuitem" href="{{ '/' | relative_url }}">Home</a>
+      <li>
+        <a href="{{ '/' | relative_url }}">Home</a>
       </li>
 
-      <!-- ABOUT DROPDOWN (NO ARROWS) -->
-      <li class="navbar__dropdown" role="none">
+      <!-- ABOUT DROPDOWN -->
+      <li class="navbar__dropdown">
 
-        <!-- Link About -->
-        <a class="navbar__dropdown-link dropdown-trigger" href="{{ '/about/' | relative_url }}" role="menuitem">
+        
+          class="navbar__dropdown-link"
+          href="{{ '/about/' | relative_url }}"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="aboutDropdown"
+        >
           About
         </a>
 
-        <!-- Dropdown menu -->
-        <ul class="navbar__dropdown-menu" id="aboutDropdown" role="menu" aria-hidden="true">
-          <li role="none"><a role="menuitem" href="{{ '/about/who-we-are/' | relative_url }}">Who We Are</a></li>
-          <li role="none"><a role="menuitem" href="{{ '/about/support/' | relative_url }}">Support</a></li>
-          <li role="none"><a role="menuitem" href="{{ '/about/disclaimer/' | relative_url }}">Disclaimer</a></li>
-          <li role="none"><a role="menuitem" href="{{ '/about/terms-of-service/' | relative_url }}">Terms of Service</a></li>
-          <li role="none"><a role="menuitem" href="{{ '/about/privacy-policy/' | relative_url }}">Privacy Policy</a></li>
+        <ul class="navbar__dropdown-menu" id="aboutDropdown" aria-hidden="true">
+          <li><a href="{{ '/about/who-we-are/' | relative_url }}">Who We Are</a></li>
+          <li><a href="{{ '/about/support/' | relative_url }}">Support</a></li>
+          <li><a href="{{ '/about/disclaimer/' | relative_url }}">Disclaimer</a></li>
+          <li><a href="{{ '/about/terms-of-service/' | relative_url }}">Terms of Service</a></li>
+          <li><a href="{{ '/about/privacy-policy/' | relative_url }}">Privacy Policy</a></li>
         </ul>
 
       </li>
     </ul>
 
     <!-- Search -->
-    <div class="navbar__search" role="search">
-      <form id="navSearchForm" action="{{ '/search' | relative_url }}" method="get">
-        <input type="search" name="q" id="searchInput" class="navbar__search-input" placeholder="Search..." autocomplete="off">
-        <button type="submit" class="navbar__search-btn">
-          <i class="fas fa-search"></i>
-        </button>
-      </form>
-    </div>
+    <form
+      class="navbar__search"
+      id="navSearchForm"
+      role="search"
+      aria-label="Site search"
+      action="{{ '/search' | relative_url }}"
+      method="get"
+    >
+      <label for="searchInput" class="sr-only">Search</label>
+      <input
+        type="search"
+        name="q"
+        id="searchInput"
+        class="navbar__search-input"
+        placeholder="Search..."
+        autocomplete="off"
+      >
+      <button type="submit" class="navbar__search-btn" aria-label="Submit search">
+        <i class="fas fa-search" aria-hidden="true"></i>
+      </button>
+    </form>
 
   </div>
 </nav>

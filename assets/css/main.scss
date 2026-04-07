@@ -502,3 +502,15 @@ img { max-width: 100%; display: block; }
 .navbar__dropdown-menu a:hover {
   background: #222;
 }
+
+.navbar__dropdown-menu {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  position: absolute;
+}
+
+.navbar__dropdown.open .navbar__dropdown-menu {
+  display: block;
+  opacity: 1;
+}

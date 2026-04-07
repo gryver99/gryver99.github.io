@@ -187,3 +187,47 @@ document.addEventListener('DOMContentLoaded', () => {
     if (el) el.addEventListener(event, handler);
   };
 });
+
+// ── Dropdown About (NO ARROWS VERSION) ─────────────────────────────
+
+// Elementi
+const aboutLink = document.querySelector('.navbar__dropdown-link');
+const aboutMenu = document.getElementById('aboutDropdown');
+const aboutParent = document.querySelector('.navbar__dropdown');
+
+// Desktop: apertura con hover
+if (aboutParent && aboutMenu) {
+  // Hover desktop
+  aboutParent.addEventListener('mouseenter', () => {
+    if (window.innerWidth > 900) {
+      aboutParent.classList.add('open');
+      aboutMenu.setAttribute('aria-hidden', 'false');
+    }
+  });
+
+  aboutParent.addEventListener('mouseleave', () => {
+    if (window.innerWidth > 900) {
+      aboutParent.classList.remove('open');
+      aboutMenu.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  // Mobile: apertura con click sul link About
+  aboutLink.addEventListener('click', (e) => {
+    if (window.innerWidth <= 900) {
+      e.preventDefault(); // evita che apra /about/
+      const isOpen = aboutParent.classList.toggle('open');
+      aboutMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    }
+  });
+
+  // Chiudi dropdown cliccando fuori (mobile)
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 900) {
+      if (!aboutParent.contains(e.target)) {
+        aboutParent.classList.remove('open');
+        aboutMenu.setAttribute('aria-hidden', 'true');
+      }
+    }
+  });
+}

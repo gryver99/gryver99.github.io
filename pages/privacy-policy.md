@@ -2,6 +2,7 @@
 layout: default
 title: Privacy Policy – Game Leaf
 ---
+
 # Privacy Policy – Game Leaf
 
 Your privacy is one of our top priorities. This Privacy Policy describes the types of data we collect at Game Leaf, how we use it, and your rights regarding your personal information.

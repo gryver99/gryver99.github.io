@@ -6,7 +6,9 @@ permalink: /about/
 
 # About GameLeaf
 
-Breve introduzione e link rapidi:
+## Welcome
+
+
 - [Who We Are]({{ '/about/who-we-are/' | relative_url }})
 - [Support]({{ '/about/support/' | relative_url }})
 - [Terms of Service]({{ '/about/terms-of-service/' | relative_url }})

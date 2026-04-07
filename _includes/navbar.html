@@ -17,24 +17,26 @@
         <a role="menuitem" href="{{ '/' | relative_url }}">Home</a>
       </li>
 
-      <!-- Dropdown About -->
+      <!-- About: link to /about/ + dropdown for subpages -->
       <li class="navbar__dropdown" role="none">
+        <a class="navbar__dropdown-link" href="{{ '/about/' | relative_url }}" role="menuitem">About</a>
+
         <button
           class="navbar__dropdown-toggle"
           aria-haspopup="true"
           aria-expanded="false"
           aria-controls="aboutDropdown"
+          aria-label="Apri menu About"
         >
-          About
           <i class="fas fa-chevron-down" aria-hidden="true"></i>
         </button>
 
         <ul class="navbar__dropdown-menu" id="aboutDropdown" role="menu" aria-hidden="true">
-          <li role="none"><a role="menuitem" href="{{ '/pages/who-we-are' | relative_url }}">Who We Are</a></li>
-          <li role="none"><a role="menuitem" href="{{ '/pages/support' | relative_url }}">Support</a></li>
-          <li role="none"><a role="menuitem" href="{{ '/pages/disclaimer' | relative_url }}">Disclaimer</a></li>
-          <li role="none"><a role="menuitem" href="{{ '/pages/terms-of-service' | relative_url }}">Terms of Service</a></li>
-          <li role="none"><a role="menuitem" href="{{ '/pages/privacy-policy' | relative_url }}">Privacy Policy</a></li>
+          <li role="none"><a role="menuitem" href="{{ '/about/who-we-are/' | relative_url }}">Who We Are</a></li>
+          <li role="none"><a role="menuitem" href="{{ '/about/support/' | relative_url }}">Support</a></li>
+          <li role="none"><a role="menuitem" href="{{ '/about/disclaimer/' | relative_url }}">Disclaimer</a></li>
+          <li role="none"><a role="menuitem" href="{{ '/about/terms-of-service/' | relative_url }}">Terms of Service</a></li>
+          <li role="none"><a role="menuitem" href="{{ '/about/privacy-policy/' | relative_url }}">Privacy Policy</a></li>
         </ul>
       </li>
     </ul>

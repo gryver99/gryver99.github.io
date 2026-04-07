@@ -6,10 +6,8 @@ permalink: /about/
 
 # About GameLeaf
 
-Breve introduzione, missione, link rapidi:
-
-- [Who We Are]({{ '/pages/who-we-are' | relative_url }})
-- [Support]({{ '/pages/support' | relative_url }})
-- [Disclaimer]({{ '/pages/disclaimer' | relative_url }})
-- [Terms of Service]({{ '/pages/terms-of-service' | relative_url }})
-- [Privacy Policy]({{ '/pages/privacy-policy' | relative_url }})
+Breve introduzione e link rapidi:
+- [Who We Are]({{ '/about/who-we-are/' | relative_url }})
+- [Support]({{ '/about/support/' | relative_url }})
+- [Terms of Service]({{ '/about/terms-of-service/' | relative_url }})
+- [Privacy Policy]({{ '/about/privacy-policy/' | relative_url }})

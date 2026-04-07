@@ -1,4 +1,10 @@
 ---
+layout: default
+title: Privacy Policy
+---
+# Privacy Policy
+...
+---
 title: Privacy Policy – Game Leaf
 ---
 

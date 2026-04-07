@@ -125,6 +125,75 @@ img { max-width: 100%; display: block; }
       transition: all 0.3s;
     }
   }
+
+  // ── Dropdown About ──────────────────────────────
+  &__dropdown {
+    position: relative;
+  }
+
+  // Il link/bottone che attiva il dropdown
+  &__dropdown-link {
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: $font-title;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.2s;
+    &:hover {
+      color: $accent;
+      border-color: $border;
+      text-shadow: 0 0 10px $accent-dim;
+    }
+  }
+
+  // Menu a tendina — unica dichiarazione, controllata dalla classe .open sul parent
+  &__dropdown-menu {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 180px;
+    flex-direction: column;
+    background: rgba(13, 15, 20, 0.98);
+    border: 1px solid $border;
+    border-radius: 4px;
+    padding: 8px 0;
+    z-index: 999;
+    transition: opacity 0.2s ease;
+
+    a {
+      display: block;
+      padding: 8px 16px;
+      font-family: $font-title;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: $text;
+      transition: all 0.2s;
+      &:hover {
+        color: $accent;
+        background: rgba(255,255,255,0.04);
+      }
+    }
+  }
+
+  // Stato aperto: controllato dalla classe .open sul .navbar__dropdown
+  &__dropdown.open &__dropdown-menu {
+    display: flex;
+    opacity: 1;
+  }
 }
 
 // ── Footer ────────────────────────────────────────
@@ -140,7 +209,11 @@ img { max-width: 100%; display: block; }
     content: '';
     position: absolute;
     inset: 0;
-    background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.07) 3px, rgba(0,0,0,0.07) 4px);
+    background: repeating-linear-gradient(
+      0deg,
+      transparent, transparent 3px,
+      rgba(0,0,0,0.07) 3px, rgba(0,0,0,0.07) 4px
+    );
     pointer-events: none;
     z-index: 0;
   }
@@ -286,6 +359,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 768px) {
   .navbar {
     &__toggle { display: flex; }
+
     &__links {
       display: none;
       position: absolute;
@@ -296,7 +370,16 @@ img { max-width: 100%; display: block; }
       flex-direction: column;
       padding: 16px;
       gap: 4px;
-      &.open { display: flex; }
+      &.is-open { display: flex; }
+    }
+
+    // Su mobile il dropdown si apre inline nel menu
+    &__dropdown-menu {
+      position: static;
+      border: none;
+      padding: 0 0 0 16px;
+      background: transparent;
+      min-width: unset;
     }
   }
 
@@ -304,8 +387,7 @@ img { max-width: 100%; display: block; }
   .gl-nav, .gl-status { display: none; }
 }
 
-// ─── Hero ────────────────────────────────────────────────────────────────────
-
+// ── Hero ──────────────────────────────────────────
 .hero {
   position: relative;
   height: 460px;
@@ -316,14 +398,12 @@ img { max-width: 100%; display: block; }
   justify-content: center;
 }
 
-// Dragon — occupa più spazio e parte dal centro dell'immagine (il viso)
 .hero__dragon {
   position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
   width: 58%;
-
   img {
     width: 100%;
     height: 100%;
@@ -333,7 +413,6 @@ img { max-width: 100%; display: block; }
   }
 }
 
-// Fade che fonde il dragon nello sfondo
 .hero__dragon-fade {
   position: absolute;
   inset: 0;
@@ -343,7 +422,6 @@ img { max-width: 100%; display: block; }
     linear-gradient(to top,    #0a130b 0%, transparent 18%);
 }
 
-// Contenuto centrato a sinistra
 .hero__content {
   position: relative;
   z-index: 5;
@@ -378,11 +456,9 @@ img { max-width: 100%; display: block; }
   line-height: 1.15;
   letter-spacing: -0.01em;
   margin: 0;
-
-  span {
-    color: #7fe87a;
-  }
+  span { color: #7fe87a; }
 }
+
 // ── Buttons ───────────────────────────────────────
 .btn {
   font-family: $font-title;
@@ -423,7 +499,6 @@ img { max-width: 100%; display: block; }
   50%       { transform: translateY(-12px); }
 }
 
-// ── Hero responsive ───────────────────────────────
 @media (max-width: 768px) {
   .hero {
     &__dragon { display: none; }
@@ -431,86 +506,97 @@ img { max-width: 100%; display: block; }
   }
 }
 
-/* Carosello 3-up */
-.video-carousel{position:relative;margin:2rem 0}
-.carousel-viewport{overflow:hidden;border-radius:12px}
-.gl-video-track{display:flex;gap:1rem;transition:transform .5s cubic-bezier(.22,.9,.3,1);will-change:transform;padding:1rem 0}
-.gl-slide{flex:0 0 calc((100% - 2rem) / 3);box-sizing:border-box;opacity:0.98}
-.video-wrap{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:8px;overflow:hidden;height:220px;display:flex;align-items:center;justify-content:center}
-.video-wrap iframe{width:100%;height:100%;border:0}
-.video-caption{padding:.5rem .6rem;color:rgba(230,247,239,0.9);font-weight:600;font-size:.95rem}
-
-/* Controls */
-.gl-carousel-controls{position:absolute;right:1rem;top:50%;transform:translateY(-50%);display:flex;gap:.5rem;z-index:40}
-.gl-btn{background:rgba(0,0,0,0.5);color:#fff;border:0;padding:.5rem .8rem;border-radius:8px;cursor:pointer;font-size:1.25rem}
-.gl-btn:focus{outline:2px solid rgba(31,191,107,0.6);outline-offset:3px}
-
-/* Indicators */
-.carousel-indicators{display:flex;gap:.4rem;justify-content:center;margin-top:.6rem}
-.carousel-indicators button{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.12);border:0}
-.carousel-indicators button.active{background:linear-gradient(90deg,#1fbf6b,#0f7a4a)}
-
-/* Responsive breakpoints */
-@media (max-width:1000px){
-  .gl-slide{flex:0 0 calc((100% - 1rem) / 2)}
-  .video-wrap{height:200px}
-}
-@media (max-width:600px){
-  .gl-slide{flex:0 0 100%}
-  .video-wrap{height:220px}
-  .gl-carousel-controls{right:.6rem}
-}
-.navbar__dropdown {
+// ── Video Carousel ────────────────────────────────
+.video-carousel {
   position: relative;
+  margin: 2rem 0;
 }
 
-.navbar__dropdown-toggle {
-  background: none;
-  border: none;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
+.carousel-viewport {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.gl-video-track {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.5s cubic-bezier(.22,.9,.3,1);
+  will-change: transform;
+  padding: 1rem 0;
+}
+
+.gl-slide {
+  flex: 0 0 calc((100% - 2rem) / 3);
+  box-sizing: border-box;
+  opacity: 0.98;
+}
+
+.video-wrap {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 8px;
+  overflow: hidden;
+  height: 220px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  iframe { width: 100%; height: 100%; border: 0; }
 }
 
-.navbar__dropdown-menu {
+.video-caption {
+  padding: 0.5rem 0.6rem;
+  color: rgba(230,247,239,0.9);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.gl-carousel-controls {
   position: absolute;
-  top: 100%;
-  left: 0;
-  background: #111;
-  border: 1px solid #222;
-  padding: 10px 0;
-  display: none;
-  flex-direction: column;
-  min-width: 180px;
-  z-index: 999;
-}
-
-.navbar__dropdown-menu[aria-hidden="false"] {
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
+  gap: 0.5rem;
+  z-index: 40;
 }
 
-.navbar__dropdown-menu a {
-  padding: 8px 16px;
-  display: block;
+.gl-btn {
+  background: rgba(0,0,0,0.5);
   color: #fff;
-  text-decoration: none;
+  border: 0;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  &:focus {
+    outline: 2px solid rgba(31,191,107,0.6);
+    outline-offset: 3px;
+  }
 }
 
-.navbar__dropdown-menu a:hover {
-  background: #222;
+.carousel-indicators {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-top: 0.6rem;
+  button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.12);
+    border: 0;
+    &.active {
+      background: linear-gradient(90deg, #1fbf6b, #0f7a4a);
+    }
+  }
 }
 
-.navbar__dropdown-menu {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  position: absolute;
+@media (max-width: 1000px) {
+  .gl-slide { flex: 0 0 calc((100% - 1rem) / 2); }
+  .video-wrap { height: 200px; }
 }
 
-.navbar__dropdown.open .navbar__dropdown-menu {
-  display: block;
-  opacity: 1;
+@media (max-width: 600px) {
+  .gl-slide { flex: 0 0 100%; }
+  .video-wrap { height: 220px; }
+  .gl-carousel-controls { right: 0.6rem; }
 }

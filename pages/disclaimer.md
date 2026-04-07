@@ -1,5 +1,6 @@
 ---
-title: Disclaimer – Game Leaf
+layout: legal
+title: Privacy Policy – Game Leaf
 ---
 
 # Disclaimer – Game Leaf

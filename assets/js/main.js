@@ -4,11 +4,14 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ── Elements ───────────────────────────────────
-  const navToggle   = document.getElementById('navToggle');
-  const navLinks    = document.getElementById('navLinks');
-  const navbar      = document.querySelector('.navbar');
-  const navForm     = document.getElementById('navSearchForm');
-  const navInput    = document.getElementById('searchInput') || document.getElementById('q');
+  const navToggle = document.getElementById('navToggle');
+  const navLinks  = document.getElementById('navLinks');
+  const navbar    = document.querySelector('.navbar');
+  const navForm   = document.getElementById('navSearchForm');
+
+  // Due possibili ID per il campo di ricerca in base alla pagina corrente.
+  // Nota: se entrambi esistessero, verrebbe usato il primo ('searchInput').
+  const navInput  = document.getElementById('searchInput') || document.getElementById('q');
 
   // Dropdown About
   const aboutParent = document.querySelector('.navbar__dropdown');
@@ -93,21 +96,22 @@ document.addEventListener('DOMContentLoaded', () => {
       setAriaExpanded(aboutLink, false);
     }
 
-    // Hover (solo desktop)
+    // closeTimer dichiarato nel blocco dove viene usato
     let closeTimer;
 
-aboutParent.addEventListener('mouseenter', () => {
-  if (IS_DESKTOP()) {
-    clearTimeout(closeTimer);
-    openAbout();
-  }
-});
+    // Hover (solo desktop)
+    aboutParent.addEventListener('mouseenter', () => {
+      if (IS_DESKTOP()) {
+        clearTimeout(closeTimer);
+        openAbout();
+      }
+    });
 
-aboutParent.addEventListener('mouseleave', () => {
-  if (IS_DESKTOP()) {
-    closeTimer = setTimeout(closeAbout, 250);
-  }
-});
+    aboutParent.addEventListener('mouseleave', () => {
+      if (IS_DESKTOP()) {
+        closeTimer = setTimeout(closeAbout, 250);
+      }
+    });
 
     // Click (solo mobile)
     aboutLink.addEventListener('click', (e) => {
@@ -130,6 +134,23 @@ aboutParent.addEventListener('mouseleave', () => {
         closeAbout();
       }
     });
+
+    // ── Resize: chiude i menu se si cambia fascia (mobile ↔ desktop) ──
+    // Evita stati inconsistenti dopo rotazione schermo o resize finestra.
+    window.addEventListener('resize', Utils.debounce(() => {
+      if (IS_DESKTOP()) {
+        // Passando a desktop: chiudi il nav mobile se aperto
+        if (navLinks && navLinks.classList.contains(OPEN_CLASS)) {
+          navLinks.classList.remove(OPEN_CLASS);
+          setAriaExpanded(navToggle, false);
+          setAriaHidden(navLinks, true);
+        }
+      } else {
+        // Passando a mobile: chiudi il dropdown About se aperto via hover
+        clearTimeout(closeTimer);
+        closeAbout();
+      }
+    }, 150));
   }
 
   // ── Navbar scroll effect ───────────────────────
@@ -183,18 +204,34 @@ aboutParent.addEventListener('mouseleave', () => {
   }
   window.addEventListener('keydown', handleFirstTab);
 
-  // ── Utilities globali ──────────────────────────
-  window.__debounce = function (fn, wait = 200) {
-    let t;
-    return function (...args) {
-      clearTimeout(t);
-      t = setTimeout(() => fn.apply(this, args), wait);
-    };
-  };
+  // ── Utilities: raccolte in window.Utils per non inquinare il namespace globale ──
+  window.Utils = {
 
-  window.__safeOn = function (selector, event, handler) {
-    const el = document.querySelector(selector);
-    if (el) el.addEventListener(event, handler);
+    /**
+     * Ritarda l'esecuzione di fn di `wait` ms dopo l'ultimo invocation.
+     * @param {Function} fn
+     * @param {number} wait
+     * @returns {Function}
+     */
+    debounce(fn, wait = 200) {
+      let t;
+      return function (...args) {
+        clearTimeout(t);
+        t = setTimeout(() => fn.apply(this, args), wait);
+      };
+    },
+
+    /**
+     * Aggiunge un event listener in modo sicuro (noop se il selettore non esiste).
+     * @param {string} selector
+     * @param {string} event
+     * @param {Function} handler
+     */
+    safeOn(selector, event, handler) {
+      const el = document.querySelector(selector);
+      if (el) el.addEventListener(event, handler);
+    },
+
   };
 
 });

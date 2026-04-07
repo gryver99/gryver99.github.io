@@ -94,13 +94,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Hover (solo desktop)
-    aboutParent.addEventListener('mouseenter', () => {
-      if (IS_DESKTOP()) openAbout();
-    });
+    let closeTimer;
 
-    aboutParent.addEventListener('mouseleave', () => {
-      if (IS_DESKTOP()) closeAbout();
-    });
+aboutParent.addEventListener('mouseenter', () => {
+  if (IS_DESKTOP()) {
+    clearTimeout(closeTimer);
+    openAbout();
+  }
+});
+
+aboutParent.addEventListener('mouseleave', () => {
+  if (IS_DESKTOP()) {
+    closeTimer = setTimeout(closeAbout, 250);
+  }
+});
 
     // Click (solo mobile)
     aboutLink.addEventListener('click', (e) => {

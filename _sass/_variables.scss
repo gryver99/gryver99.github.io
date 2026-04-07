@@ -1,17 +1,28 @@
+// _variables.scss
 // ── Colors ──────────────────────────────────────
-$bg:          #0d0f14;
-$surface:     rgba(255,255,255,0.04);
-$border:      rgba(0, 220, 180, 0.18);
-$accent:      #00ddb4;
-$accent-dim:  rgba(0, 221, 180, 0.55);
-$text:        #c8d0da;
-$muted:       #4e5a6a;
-$glow:        0 0 18px rgba(0,221,180,0.18);
+$bg:            #0a130b; // gaming background (matches components)
+$surface:       rgba(255,255,255,0.04);
+$border:        rgba(29,187,108,0.18); // derived from gaming green
+$accent:        #1dbb6c; // gaming green (primary)
+$accent-dim:    rgba(29,187,108,0.55);
+$text:          #c8d0da;
+$muted:         #4e5a6a;
+$glow:          0 0 18px rgba(29,187,108,0.18);
+
+// Semantic aliases
+$color-bg:         $bg;
+$color-surface:    $surface;
+$color-border:     $border;
+$color-primary:    $accent;
+$color-primary-dim:$accent-dim;
+$color-text:       $text;
+$color-muted:      $muted;
 
 // ── Typography ───────────────────────────────────
 $font-main:   'Inter', 'Segoe UI', sans-serif;
 $font-title:  'Rajdhani', 'Segoe UI', sans-serif;
 $font-mono:   'Space Mono', monospace;
+$font-code:   'JetBrains Mono', monospace;
 
 // ── Layout ───────────────────────────────────────
 $max-width:   1200px;

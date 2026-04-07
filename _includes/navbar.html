@@ -1,23 +1,61 @@
-<nav class="navbar">
+<!-- navbar.html -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="navbar__container">
-    <a href="{{ '/' | relative_url }}" class="navbar__logo">
-      <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="GameLeaf">
-      <span>GameLeaf</span>
+    <a href="{{ '/' | relative_url }}" class="navbar__logo" aria-label="Home">
+      <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="GameLeaf logo" width="40" height="40">
+      <span class="navbar__brand">GameLeaf</span>
     </a>
-    <button class="navbar__toggle" id="navToggle" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
+
+    <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <span class="navbar__toggle-bar" aria-hidden="true"></span>
+      <span class="navbar__toggle-bar" aria-hidden="true"></span>
+      <span class="navbar__toggle-bar" aria-hidden="true"></span>
     </button>
-    <ul class="navbar__links" id="navLinks">
-      <li><a href="{{ '/' | relative_url }}">Home</a></li>
-      <li><a href="{{ '/articles' | relative_url }}">Articles</a></li>
-      <li><a href="{{ '/games' | relative_url }}">Games</a></li>
-      <li><a href="{{ '/about' | relative_url }}">About</a></li>
+
+    <ul class="navbar__links" id="navLinks" role="menubar" aria-hidden="true">
+      <li role="none">
+        <a role="menuitem" href="{{ '/' | relative_url }}">Home</a>
+      </li>
+
+      <!-- Dropdown About -->
+      <li class="navbar__dropdown" role="none">
+        <button
+          class="navbar__dropdown-toggle"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="aboutDropdown"
+        >
+          About
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+
+        <ul class="navbar__dropdown-menu" id="aboutDropdown" role="menu" aria-hidden="true">
+          <li role="none"><a role="menuitem" href="{{ '/pages/who-we-are' | relative_url }}">Who We Are</a></li>
+          <li role="none"><a role="menuitem" href="{{ '/pages/support' | relative_url }}">Support</a></li>
+          <li role="none"><a role="menuitem" href="{{ '/pages/disclaimer' | relative_url }}">Disclaimer</a></li>
+          <li role="none"><a role="menuitem" href="{{ '/pages/terms-of-service' | relative_url }}">Terms of Service</a></li>
+          <li role="none"><a role="menuitem" href="{{ '/pages/privacy-policy' | relative_url }}">Privacy Policy</a></li>
+        </ul>
+      </li>
     </ul>
-    <div class="navbar__search">
-      <input type="text" placeholder="Search..." id="searchInput">
-      <i class="fas fa-search"></i>
+
+    <!-- Search -->
+    <div class="navbar__search" role="search">
+      <form id="navSearchForm" action="{{ '/search' | relative_url }}" method="get" aria-label="Site search">
+        <label for="searchInput" class="sr-only">Search</label>
+        <input
+          type="search"
+          name="q"
+          id="searchInput"
+          class="navbar__search-input"
+          placeholder="Search..."
+          aria-label="Search"
+          autocomplete="off"
+        >
+        <button type="submit" class="navbar__search-btn" aria-label="Submit search">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </button>
+      </form>
     </div>
   </div>
 </nav>

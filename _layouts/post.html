@@ -1,0 +1,252 @@
+---
+layout: default
+---
+
+{% assign p = page %}
+
+<section class="gp-hero" {% if p.hero_image %}style="background-image: url('{{ p.hero_image }}')"{% endif %}>
+  <div class="gp-hero-overlay"></div>
+  <div class="gp-hero-content">
+    {% if p.category %}<span class="gp-hero-cat">{{ p.category }}</span>{% endif %}
+    <h1 class="gp-hero-title">{{ p.title }}</h1>
+    {% if p.subtitle %}<p class="gp-hero-sub">{{ p.subtitle }}</p>{% endif %}
+  </div>
+</section>
+
+<div class="gp-wrapper">
+  <div class="gp-layout">
+
+    <!-- COLONNA SINISTRA -->
+    <aside class="gp-sidebar">
+
+      {% if p.images %}
+      <div class="gp-screenshots">
+        {% for img in p.images %}
+        <div class="gp-screenshot">
+          <img src="{{ img }}" alt="{{ p.title }} screenshot" loading="lazy">
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if p.video_id %}
+      <div class="gp-video">
+        <iframe
+          src="https://www.youtube.com/embed/{{ p.video_id }}"
+          title="{{ p.title }} gameplay"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      {% endif %}
+
+      {% if p.buttons %}
+      <div class="gp-buttons">
+        {% for btn in p.buttons %}
+        <a href="{{ btn.url }}" target="_blank" rel="noopener" class="gp-btn gp-btn--{{ btn.type | default: 'default' }}">
+          {% if btn.type == 'playstore' %}
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-17c0-.83 1-.83 1.5-.5l15 8.5-15 8.5c-.5.33-1.5.33-1.5-.5z"/></svg>
+          {% elsif btn.type == 'redeem' %}
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.06 15.94 0 13.36 0c-1.3 0-2.48.54-3.36 1.4C9.12.54 7.94 0 6.64 0 4.06 0 2 2.06 2 4.64c0 .48.11.92.18 1.36H0v14h24V6h-4zm-6.64-4c.9 0 1.64.74 1.64 1.64 0 .9-.74 1.64-1.64 1.64H12V3.28C12.37 2.5 13.05 2 13.36 2zm-6.72 0C7.54 2 8.28 2.74 8.28 3.64c0 .9-.74 1.64-1.64 1.64H4.64C3.74 5.28 3 4.54 3 3.64 3 2.74 3.74 2 4.64 2zM2 8h9v10H2V8zm11 10V8h9v10h-9z"/></svg>
+          {% else %}
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          {% endif %}
+          {{ btn.label }}
+        </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+    </aside>
+
+    <!-- COLONNA DESTRA -->
+    <article class="gp-content">
+
+      <div class="gp-meta">
+        <h2 class="gp-game-title">
+          {{ p.title }}
+          {% if p.subtitle %}<span class="gp-game-sub">— {{ p.subtitle }}</span>{% endif %}
+        </h2>
+        {% if p.release_date %}
+        <p class="gp-release">Release Date : {{ p.release_date }}</p>
+        {% endif %}
+        {% if p.badge %}
+        <span class="gp-badge gp-badge--{{ p.badge | downcase | replace: ' ', '-' }}">{{ p.badge }}</span>
+        {% endif %}
+      </div>
+
+      <div class="gp-body">
+        {{ content }}
+      </div>
+
+    </article>
+  </div>
+</div>
+
+<style>
+/* ── Hero ─────────────────────────────────────────── */
+.gp-hero {
+  position: relative;
+  height: 340px;
+  background: #0a130b center/cover no-repeat;
+  display: flex; align-items: flex-end;
+  overflow: hidden;
+}
+.gp-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, #0a130b 0%, rgba(0,0,0,.45) 60%, rgba(0,0,0,.2) 100%);
+}
+.gp-hero-content {
+  position: relative; z-index: 2;
+  padding: 0 40px 36px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.gp-hero-cat {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: #1dbb6c;
+  border: 1px solid rgba(29,187,108,.4);
+  background: rgba(29,187,108,.1);
+  padding: 3px 10px; border-radius: 3px;
+  width: fit-content;
+}
+.gp-hero-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 700; color: #e8f5e0;
+  letter-spacing: .06em; text-transform: uppercase;
+  margin: 0; line-height: 1;
+  text-shadow: 0 2px 20px rgba(0,0,0,.6);
+}
+.gp-hero-sub {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px; color: #7fe87a;
+  letter-spacing: .12em; text-transform: uppercase;
+  margin: 0;
+}
+
+/* ── Wrapper ──────────────────────────────────────── */
+.gp-wrapper {
+  background: #0d1509;
+  min-height: 60vh;
+}
+.gp-layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .gp-layout { grid-template-columns: 1fr; }
+}
+
+/* ── Sidebar ──────────────────────────────────────── */
+.gp-sidebar { display: flex; flex-direction: column; gap: 14px; }
+
+.gp-screenshots { display: flex; flex-direction: column; gap: 10px; }
+.gp-screenshot { border-radius: 8px; overflow: hidden; border: 1px solid #1d3a20; }
+.gp-screenshot img { width: 100%; display: block; transition: transform .4s; }
+.gp-screenshot:hover img { transform: scale(1.03); }
+
+.gp-video {
+  border-radius: 8px; overflow: hidden;
+  border: 1px solid #1d3a20;
+  aspect-ratio: 16/9;
+}
+.gp-video iframe { width: 100%; height: 100%; display: block; }
+
+.gp-buttons { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+
+.gp-btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 13px 20px;
+  border-radius: 6px; border: 1px solid #1d3a20;
+  background: #0d1f10;
+  color: #c8e8c0;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  text-decoration: none;
+  transition: all .2s;
+}
+.gp-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.gp-btn:hover { background: #1d3a20; border-color: #1dbb6c; color: #7fe87a; }
+
+.gp-btn--playstore { background: #0d2e14; border-color: #1dbb6c; color: #1dbb6c; }
+.gp-btn--playstore:hover { background: #1dbb6c; color: #051a0e; }
+
+.gp-btn--redeem { background: #1e1800; border-color: #c8a84b; color: #c8a84b; }
+.gp-btn--redeem:hover { background: #c8a84b; color: #1e1800; }
+
+/* ── Content ──────────────────────────────────────── */
+.gp-meta { margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid #1d3a20; }
+
+.gp-game-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 26px; font-weight: 700;
+  color: #e8f5e0; letter-spacing: .04em;
+  text-transform: uppercase; margin: 0 0 10px;
+}
+.gp-game-sub {
+  font-size: 18px; color: #7fe87a;
+  font-weight: 600; letter-spacing: .06em;
+}
+.gp-release {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; color: #3a6a40;
+  letter-spacing: .08em; margin: 0 0 10px;
+}
+.gp-badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 4px;
+}
+.gp-badge--new          { background:rgba(200,168,75,.15);  color:#c8a84b; border:1px solid rgba(200,168,75,.4); }
+.gp-badge--beta         { background:rgba(255,154,60,.15);  color:#ff9a3c; border:1px solid rgba(255,154,60,.4); }
+.gp-badge--coming-soon  { background:rgba(100,160,255,.15); color:#64a0ff; border:1px solid rgba(100,160,255,.4); }
+.gp-badge--patch-notes  { background:rgba(180,120,224,.15); color:#b478e0; border:1px solid rgba(180,120,224,.4); }
+
+/* ── Markdown body ────────────────────────────────── */
+.gp-body { color: #a8c8a0; line-height: 1.75; font-size: 15px; }
+
+.gp-body h2, .gp-body h3 {
+  font-family: 'Rajdhani', sans-serif;
+  color: #e8f5e0; letter-spacing: .04em;
+  text-transform: uppercase;
+  margin: 32px 0 12px;
+  display: flex; align-items: center; gap: 10px;
+}
+.gp-body h2 { font-size: 18px; font-weight: 700; }
+.gp-body h2::before {
+  content: '';
+  display: inline-block; width: 4px; height: 18px;
+  background: #1dbb6c; border-radius: 2px; flex-shrink: 0;
+}
+.gp-body h3 { font-size: 15px; color: #7fe87a; }
+
+.gp-body p { margin: 0 0 14px; }
+
+.gp-body ul { padding-left: 0; list-style: none; margin: 0 0 16px; }
+.gp-body ul li {
+  padding: 6px 0 6px 18px;
+  position: relative;
+  border-bottom: 1px solid rgba(29,58,32,.5);
+}
+.gp-body ul li::before {
+  content: '';
+  position: absolute; left: 0; top: 14px;
+  width: 6px; height: 6px;
+  border-radius: 50%; background: #1dbb6c;
+}
+.gp-body ul li strong { color: #c8e8c0; }
+
+.gp-body a { color: #1dbb6c; text-decoration: none; }
+.gp-body a:hover { color: #7fe87a; text-decoration: underline; }
+</style>

@@ -304,95 +304,83 @@ img { max-width: 100%; display: block; }
   .gl-nav, .gl-status { display: none; }
 }
 
-// ── Hero ──────────────────────────────────────────
+// ─── Hero ────────────────────────────────────────────────────────────────────
+
 .hero {
   position: relative;
-  min-height: 100vh;
+  height: 460px;
+  background: #0a130b;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  padding-top: $navbar-h;
+}
 
-  &__bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+// Dragon — occupa più spazio e parte dal centro dell'immagine (il viso)
+.hero__dragon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 58%;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      opacity: 0.28;
-    }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 20% center;
+    display: block;
   }
+}
 
-  &__overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(13,15,20,0.92) 0%,
-      rgba(13,15,20,0.6) 50%,
-      rgba(0,221,180,0.04) 100%
-    );
-  }
+// Fade che fonde il dragon nello sfondo
+.hero__dragon-fade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right,  #0a130b 0%, #0a130baa 35%, transparent 65%),
+    linear-gradient(to bottom, #0a130b 0%, transparent 18%),
+    linear-gradient(to top,    #0a130b 0%, transparent 18%);
+}
 
-  &__content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 24px;
-    padding: 0 24px;
-    max-width: 600px;
-  }
+// Contenuto centrato a sinistra
+.hero__content {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding-right: 50%;
+  padding-left: 4%;
+}
 
-  &__logo {
-    width: min(340px, 70vw);
-    height: auto;
-    border-radius: 16px;
-    background: transparent;
-    filter: drop-shadow(0 0 40px rgba(0,221,180,0.35));
-    animation: heroFloat 4s ease-in-out infinite;
-  }
+.hero__logo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
 
-  &__tagline {
-    font-family: $font-title;
-    font-size: clamp(14px, 2vw, 20px);
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: $muted;
-  }
+.hero__brand {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1dbb6c;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-top: -6px;
+}
 
-  &__cta {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 8px;
-  }
+.hero__tagline {
+  font-size: 28px;
+  font-weight: 900;
+  color: #e8f5e0;
+  text-align: center;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0;
 
-  &__dragon {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    width: min(420px, 40vw);
-    opacity: 0.7;
-    pointer-events: none;
-
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      object-position: bottom right;
-      filter: drop-shadow(0 0 30px rgba(0,221,180,0.25));
-    }
+  span {
+    color: #7fe87a;
   }
 }
 // ── Buttons ───────────────────────────────────────
@@ -471,4 +459,46 @@ img { max-width: 100%; display: block; }
   .gl-slide{flex:0 0 100%}
   .video-wrap{height:220px}
   .gl-carousel-controls{right:.6rem}
+}
+.navbar__dropdown {
+  position: relative;
+}
+
+.navbar__dropdown-toggle {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navbar__dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #111;
+  border: 1px solid #222;
+  padding: 10px 0;
+  display: none;
+  flex-direction: column;
+  min-width: 180px;
+  z-index: 999;
+}
+
+.navbar__dropdown-menu[aria-hidden="false"] {
+  display: flex;
+}
+
+.navbar__dropdown-menu a {
+  padding: 8px 16px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar__dropdown-menu a:hover {
+  background: #222;
 }

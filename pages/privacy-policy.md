@@ -1,10 +1,5 @@
 ---
 layout: default
-title: Privacy Policy
----
-# Privacy Policy
-...
----
 title: Privacy Policy – Game Leaf
 ---
 
@@ -112,5 +107,3 @@ If you wish to exercise any of these rights, please contact us. We will respond 
 
 Protecting children online is vital. We encourage parents and guardians to monitor their children’s online activity. Game Leaf does not knowingly collect personal data from children under the age of 13.  
 If you believe your child has provided personal information on our site, please contact us immediately, and we will do our best to promptly remove such information.
-
----

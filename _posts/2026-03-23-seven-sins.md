@@ -6,6 +6,7 @@ date: 2026-03-23
 release_date: "23/03/26"
 category: Action RPG
 badge: New
+tags: "Action"
 image: https://i.ibb.co/ymmybjsj/maxresdefault-2.jpg
 description: "Discover Seven Deadly Sins: Origin with max graphics settings — stunning visuals and smooth gameplay on mobile."
 

@@ -5,7 +5,8 @@ subtitle: "The fate of humanity rests in your hands."
 date: 2026-03-04
 release_date: "04/03/26"
 category: "Anime RPG"
-badge: "GameLeaf"
+badge: "NEW"
+tags: "RPG"
 image: "https://i.ibb.co/MkkZ9tYk/1.jpg"
 description: "HEAVENHELLS is an anime-style real‑time RPG by GameLeaf. Lead a squad of four WITCHes against the Helion invasion, mastering unique skills and synergies to save humanity. Featuring stunning 3D anime graphics, expressive characters, and a cinematic story of trust and discovery."
 

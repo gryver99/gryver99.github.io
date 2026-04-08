@@ -34,5 +34,15 @@ jobs:
             --include-fragments
             --base .
             --exclude-mail
+            --exclude "youtube\\.com"
+            --exclude "play\\.google\\.com"
+            --exclude "taptap\\.io"
+            --exclude "ibb\\.co"
+            --exclude "lh3\\.googleusercontent\\.com"
+            --exclude "x\\.com"
+            --exclude "reddit\\.com"
+            --exclude "instagram\\.com"
+            --exclude "tiktok\\.com"
+            --exclude "threads\\.net"
             "_site/**/*.html"
           fail: true

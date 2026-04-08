@@ -213,17 +213,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Navbar search UX ──────────────────────────
   if (navForm && navInput) {
     navForm.addEventListener('submit', (e) => {
-      if (!(navInput.value || '').trim()) {
+      const result = window.FormValidation
+        ? window.FormValidation.validateSearchQuery(navInput.value)
+        : { valid: true, value: (navInput.value || '').trim(), message: '' };
+      navInput.value = result.value;
+
+      if (!result.valid) {
         e.preventDefault();
+        navInput.setCustomValidity(result.message);
+        navInput.reportValidity();
         navInput.focus();
+        return;
       }
+      navInput.setCustomValidity('');
     });
 
     navInput.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         navInput.value = '';
+        navInput.setCustomValidity('');
         navInput.blur();
       }
+    });
+
+    navInput.addEventListener('input', () => {
+      navInput.setCustomValidity('');
     });
   }
 

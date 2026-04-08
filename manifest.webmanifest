@@ -1,0 +1,22 @@
+{
+  "name": "GameLeaf",
+  "short_name": "GameLeaf",
+  "description": "Your portal for indie and mobile games.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0d1509",
+  "theme_color": "#0d1509",
+  "icons": [
+    {
+      "src": "/assets/images/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

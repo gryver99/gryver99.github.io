@@ -78,27 +78,7 @@ layout: default
         {{ content }}
       </div>
 
-      <section class="gp-related">
-        <h2 class="gp-related-title">Potrebbe interessarti anche</h2>
-        <div class="gp-related-grid">
-          {% assign max_related = 3 %}
-          {% assign count = 0 %}
-          {% for post in site.posts %}
-            {% if post.categories contains page.categories.first and post.url != page.url %}
-              <a href="{{ post.url | relative_url }}" class="gp-related-card">
-                {% if post.hero_image %}
-                  <div class="gp-related-thumb" style="background-image: url('{{ post.hero_image }}')"></div>
-                {% endif %}
-                <span class="gp-related-name">{{ post.title }}</span>
-              </a>
-              {% assign count = count | plus: 1 %}
-              {% if count >= max_related %}
-                {% break %}
-              {% endif %}
-            {% endif %}
-          {% endfor %}
-        </div>
-      </section>
+      {% include related-posts.html max=4 %}
 
     </article>
   </div>

@@ -8,9 +8,9 @@ permalink: /search/
   <div class="container">
     <h1>Search results</h1>
 
-    <form id="searchForm" role="search" aria-label="Search form">
+    <form id="searchForm" role="search" aria-label="Search form" novalidate>
       <label for="q" class="sr-only">Search</label>
-      <input id="q" name="q" type="search" value="" placeholder="Search..." aria-label="Search">
+      <input id="q" name="q" type="search" value="" placeholder="Search..." aria-label="Search" required minlength="2" maxlength="80" pattern=".*\S.*" title="Insert at least 2 non-space characters.">
       <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
     </form>
 
@@ -18,72 +18,3 @@ permalink: /search/
     <ul id="searchResults" class="search-results" role="list"></ul>
   </div>
 </section>
-
-<script>
-(async function () {
-  const params = new URLSearchParams(location.search);
-  const qParam = params.get('q') || '';
-  const input = document.getElementById('q');
-  const resultsEl = document.getElementById('searchResults');
-  const metaEl = document.getElementById('searchMeta');
-
-  input.value = qParam;
-
-  // Load index.json
-  let index = [];
-  try {
-    const res = await fetch('{{ "/index.json" | relative_url }}');
-    index = await res.json();
-  } catch (e) {
-    metaEl.textContent = 'Search index not available.';
-    return;
-  }
-
-  function normalize(s) { return (s || '').toLowerCase(); }
-
-  function renderResults(items, query) {
-    resultsEl.innerHTML = '';
-    if (!items.length) {
-      metaEl.textContent = query ? `No results for "${query}".` : 'Enter a search term.';
-      return;
-    }
-    metaEl.textContent = `${items.length} result${items.length>1?'s':''} for "${query}"`;
-    const frag = document.createDocumentFragment();
-    items.forEach(item => {
-      const li = document.createElement('li');
-      li.className = 'search-item';
-      li.innerHTML = `
-        <a href="${item.url}">
-          <h2>${item.title}</h2>
-          <p class="excerpt">${item.excerpt || ''}</p>
-          <p class="meta">${item.date || ''} • ${item.tags ? item.tags.join(', ') : ''}</p>
-        </a>
-      `;
-      frag.appendChild(li);
-    });
-    resultsEl.appendChild(frag);
-  }
-
-  function search(query) {
-    const q = normalize(query);
-    if (!q) return [];
-    return index.filter(item => {
-      const hay = `${item.title} ${item.excerpt || ''} ${ (item.tags || []).join(' ') }`.toLowerCase();
-      return hay.indexOf(q) !== -1;
-    });
-  }
-
-  // Initial render if q present
-  if (qParam) {
-    renderResults(search(qParam), qParam);
-  }
-
-  // Handle form submit (keeps URL in sync)
-  document.getElementById('searchForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const q = input.value.trim();
-    history.replaceState({}, '', q ? `?q=${encodeURIComponent(q)}` : '/search/');
-    renderResults(search(q), q);
-  });
-})();
-</script>

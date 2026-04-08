@@ -3,9 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d1509">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   {% seo %}
+  <link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
 
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% if page.has_video_carousel %}
+    <link rel="stylesheet" href="{{ '/assets/css/video-carousel.css' | relative_url }}">
+  {% endif %}
+  {% if page.url == '/' %}
+    <link rel="preload" as="image" href="{{ '/assets/images/hero-dragon.webp' | relative_url }}">
+  {% endif %}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,10 +35,13 @@
 
   {% include footer.html %}
 
-  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-
+  <script src="{{ '/assets/js/site-utils.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+  {% if page.permalink == '/search/' %}
+    <script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
+  {% endif %}
   {% if page.has_video_carousel %}
-    <script src="{{ '/assets/js/video-carousel.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/video-carousel.js' | relative_url }}" defer></script>
   {% endif %}
 
   <button id="backToTop" aria-label="Back to top">↑</button>

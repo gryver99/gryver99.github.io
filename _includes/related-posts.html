@@ -1,0 +1,51 @@
+{% assign max_related = include.max | default: 4 %}
+{% assign rendered_urls = '|' %}
+{% assign shown = 0 %}
+
+<section class="gp-related">
+  <h2 class="gp-related-title">Related Posts</h2>
+  <div class="gp-related-grid">
+    {% for candidate in site.posts %}
+      {% if shown >= max_related %}{% break %}{% endif %}
+      {% if candidate.url == page.url %}{% continue %}{% endif %}
+      {% assign match = false %}
+      {% if page.tags and candidate.tags %}
+        {% for tag in page.tags %}
+          {% if candidate.tags contains tag %}
+            {% assign match = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      {% if match %}
+        <a href="{{ candidate.url | relative_url }}" class="gp-related-card">
+          {% if candidate.image %}
+            <div class="gp-related-thumb" style="background-image: url('{{ candidate.image }}')"></div>
+          {% endif %}
+          <span class="gp-related-name">{{ candidate.title }}</span>
+        </a>
+        {% assign rendered_urls = rendered_urls | append: candidate.url | append: '|' %}
+        {% assign shown = shown | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+
+    {% if shown < max_related and page.category %}
+      {% for candidate in site.posts %}
+        {% if shown >= max_related %}{% break %}{% endif %}
+        {% if candidate.url == page.url %}{% continue %}{% endif %}
+        {% capture needle %}|{{ candidate.url }}|{% endcapture %}
+        {% if rendered_urls contains needle %}{% continue %}{% endif %}
+        {% if candidate.category == page.category %}
+          <a href="{{ candidate.url | relative_url }}" class="gp-related-card">
+            {% if candidate.image %}
+              <div class="gp-related-thumb" style="background-image: url('{{ candidate.image }}')"></div>
+            {% endif %}
+            <span class="gp-related-name">{{ candidate.title }}</span>
+          </a>
+          {% assign rendered_urls = rendered_urls | append: candidate.url | append: '|' %}
+          {% assign shown = shown | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,39 @@
+{% assign taxonomy_type = include.type | default: 'tags' %}
+{% assign taxonomy_map = site.tags %}
+{% if taxonomy_type == 'categories' %}
+  {% assign taxonomy_map = site.categories %}
+{% endif %}
+
+<section class="taxonomy-page">
+  <div class="taxonomy-page__inner">
+    <h1 class="taxonomy-page__title">{{ include.title | default: 'Browse' }}</h1>
+    <p class="taxonomy-page__subtitle">{{ include.subtitle | default: 'Explore posts by topic.' }}</p>
+
+    <div class="taxonomy-page__toc">
+      {% assign taxonomy_names = taxonomy_map | map: "first" | sort %}
+      {% for name in taxonomy_names %}
+        <a href="#{{ name | slugify }}" class="taxonomy-page__chip">{{ name }}</a>
+      {% endfor %}
+    </div>
+
+    {% for pair in taxonomy_map %}
+      {% assign name = pair[0] %}
+      {% assign posts = pair[1] %}
+      <article id="{{ name | slugify }}" class="taxonomy-block">
+        <div class="taxonomy-block__head">
+          <h2 class="taxonomy-block__title">{{ name }}</h2>
+          <span class="taxonomy-block__count">{{ posts.size }} post{% if posts.size != 1 %}s{% endif %}</span>
+        </div>
+        <ul class="taxonomy-block__list">
+          {% assign sorted_posts = posts | sort: "date" | reverse %}
+          {% for post in sorted_posts %}
+            <li>
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+            </li>
+          {% endfor %}
+        </ul>
+      </article>
+    {% endfor %}
+  </div>
+</section>

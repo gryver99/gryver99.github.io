@@ -21,6 +21,12 @@
       <li>
         <a href="{{ '/' | relative_url }}">Home</a>
       </li>
+      <li>
+        <a href="{{ '/categories/' | relative_url }}">Categories</a>
+      </li>
+      <li>
+        <a href="{{ '/tags/' | relative_url }}">Tags</a>
+      </li>
 
       <!-- ABOUT DROPDOWN -->
       <li class="navbar__dropdown">
@@ -38,9 +44,9 @@
     </ul>
 
     <!-- Search -->
-    <form class="navbar__search" id="navSearchForm" role="search" aria-label="Site search" action="{{ '/search/' | relative_url }}" method="get">
+    <form class="navbar__search" id="navSearchForm" role="search" aria-label="Site search" action="{{ '/search/' | relative_url }}" method="get" novalidate>
       <label for="searchInput" class="sr-only">Search</label>
-      <input type="search" name="q" id="searchInput" class="navbar__search-input" placeholder="Search..." autocomplete="off">
+      <input type="search" name="q" id="searchInput" class="navbar__search-input" placeholder="Search..." autocomplete="off" required minlength="2" maxlength="80" pattern=".*\S.*" title="Insert at least 2 non-space characters.">
       <button type="submit" class="navbar__search-btn" aria-label="Submit search">
         <i class="fas fa-search" aria-hidden="true"></i>
       </button>

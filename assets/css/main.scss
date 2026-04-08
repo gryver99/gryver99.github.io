@@ -873,3 +873,123 @@ main {
 @media (max-width: 600px) {
   .about-grid { flex-direction: column; gap: 32px; }
 }
+
+// ── Taxonomy & Archive pages ──────────────────────
+.taxonomy-page,
+.archive-page {
+  padding: 42px 20px 56px;
+}
+
+.taxonomy-page__inner,
+.archive-page__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.taxonomy-page__title,
+.archive-page h1 {
+  font-family: 'Rajdhani', sans-serif;
+  color: #e8f5e0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.taxonomy-page__subtitle,
+.archive-page p {
+  color: #a8c8a0;
+  margin-bottom: 20px;
+}
+
+.taxonomy-page__toc,
+.archive-page__quicklinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+.taxonomy-page__chip,
+.archive-page__quicklinks a {
+  border: 1px solid #1d3a20;
+  border-radius: 6px;
+  padding: 6px 12px;
+  background: #0d1f10;
+  color: #c8e8c0;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.taxonomy-block,
+.archive-year {
+  background: #0d1f10;
+  border: 1px solid #1d3a20;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 14px;
+}
+
+.taxonomy-block__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.taxonomy-block__title,
+.archive-year h2,
+.archive-month h3 {
+  font-family: 'Rajdhani', sans-serif;
+  color: #e8f5e0;
+  text-transform: uppercase;
+}
+
+.taxonomy-block__count,
+.archive-year span,
+.archive-month span {
+  color: #7fe87a;
+  font-size: 12px;
+}
+
+.taxonomy-block__list li,
+.archive-month li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid rgba(29,58,32,.5);
+  padding: 10px 0;
+}
+
+.taxonomy-block__list li:first-child,
+.archive-month li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.taxonomy-block__list a,
+.archive-month a {
+  color: #d8f0d0;
+}
+
+.taxonomy-block__list time,
+.archive-month time {
+  color: #7fa68a;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.archive-month {
+  margin-top: 12px;
+}
+
+// ── Search highlight ───────────────────────────────
+.search-results mark {
+  background: rgba(29,187,108,.22);
+  color: #e8f5e0;
+  border-radius: 3px;
+  padding: 0 2px;
+}

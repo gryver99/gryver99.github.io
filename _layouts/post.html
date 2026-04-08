@@ -16,7 +16,6 @@ layout: default
 <div class="gp-wrapper">
   <div class="gp-layout">
 
-    <!-- COLONNA SINISTRA -->
     <aside class="gp-sidebar">
 
       {% if p.images %}
@@ -60,7 +59,6 @@ layout: default
 
     </aside>
 
-    <!-- COLONNA DESTRA -->
     <article class="gp-content">
 
       <div class="gp-meta">
@@ -79,6 +77,28 @@ layout: default
       <div class="gp-body">
         {{ content }}
       </div>
+
+      <section class="gp-related">
+        <h2 class="gp-related-title">Potrebbe interessarti anche</h2>
+        <div class="gp-related-grid">
+          {% assign max_related = 3 %}
+          {% assign count = 0 %}
+          {% for post in site.posts %}
+            {% if post.categories contains page.categories.first and post.url != page.url %}
+              <a href="{{ post.url | relative_url }}" class="gp-related-card">
+                {% if post.hero_image %}
+                  <div class="gp-related-thumb" style="background-image: url('{{ post.hero_image }}')"></div>
+                {% endif %}
+                <span class="gp-related-name">{{ post.title }}</span>
+              </a>
+              {% assign count = count | plus: 1 %}
+              {% if count >= max_related %}
+                {% break %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
 
     </article>
   </div>
@@ -249,4 +269,51 @@ layout: default
 
 .gp-body a { color: #1dbb6c; text-decoration: none; }
 .gp-body a:hover { color: #7fe87a; text-decoration: underline; }
+
+/* ── Post Correlati UI ────────────────────────────── */
+.gp-related {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px dashed #1d3a20;
+}
+.gp-related-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px; font-weight: 700;
+  color: #7fe87a; text-transform: uppercase;
+  letter-spacing: .12em; margin-bottom: 20px;
+  display: flex; align-items: center; gap: 10px;
+}
+.gp-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+.gp-related-card {
+  text-decoration: none;
+  background: #0a130b;
+  border: 1px solid #1d3a20;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.gp-related-card:hover {
+  border-color: #1dbb6c;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(29, 187, 108, 0.15);
+}
+.gp-related-thumb {
+  height: 110px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid #1d3a20;
+}
+.gp-related-name {
+  display: block;
+  padding: 12px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px; font-weight: 600;
+  color: #e8f5e0;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
 </style>

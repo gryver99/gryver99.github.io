@@ -512,7 +512,6 @@ img { max-width: 100%; display: block; }
     &__dragon { display: none; }
     &__logo { width: min(300px, 85vw); }
 
-    // aggiungi questo:
     &__content {
       padding-right: 0;
       padding-left: 0;
@@ -790,3 +789,87 @@ main {
 .ag-page-btn.active { background:#0d2e14; color:#1dbb6c; border-color:#1dbb6c; box-shadow:0 0 10px rgba(29,187,108,.2); }
 .ag-page-btn:disabled { opacity:.25; cursor:not-allowed; }
 .ag-page-dots { color:#2a4830; font-weight:700; padding:0 2px; font-family:'Rajdhani',sans-serif; }
+
+.about-grid {
+  display: flex;
+  gap: 48px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.about-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 180px;
+}
+
+.about-links a {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #c8e8c0;
+  padding: 8px 14px;
+  border: 1px solid #1d3a20;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.about-links a:hover {
+  color: #1dbb6c;
+  border-color: #1dbb6c;
+}
+
+.about-socials {
+  flex: 1;
+}
+
+.about-socials h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #1dbb6c;
+  margin-bottom: 16px;
+}
+
+.about-socials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 10px;
+}
+
+.about-socials-grid a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 10px;
+  background: #0d1f10;
+  border: 1px solid #1d3a20;
+  border-radius: 6px;
+  color: #c8e8c0;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.about-socials-grid a:hover {
+  color: #1dbb6c;
+  border-color: #1dbb6c;
+  box-shadow: 0 0 12px rgba(29, 187, 108, 0.15);
+}
+
+.about-socials-grid i {
+  font-size: 22px;
+}
+
+@media (max-width: 600px) {
+  .about-grid { flex-direction: column; gap: 32px; }
+}

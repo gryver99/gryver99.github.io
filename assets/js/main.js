@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.Utils = {
 
     /**
-     * Ritarda l'esecuzione di fn di `wait` ms dopo l'ultimo invocation.
+     * Delays the execution of fn by `wait` ms after the last invocation.
      * @param {Function} fn
      * @param {number} wait
      * @returns {Function}

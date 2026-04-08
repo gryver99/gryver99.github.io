@@ -23,3 +23,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/hero-bg.jpg

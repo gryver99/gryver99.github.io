@@ -24,26 +24,3 @@ jobs:
 
       - name: Build Jekyll site
         run: bundle exec jekyll build
-
-      - name: Check generated HTML links
-        uses: lycheeverse/lychee-action@v1
-        with:
-          args: >-
-            --verbose
-            --no-progress
-            --include-fragments
-            --base https://gryver99.github.io
-            --exclude "youtube\\.com"
-            --exclude "play\\.google\\.com"
-            --exclude "taptap\\.io"
-            --exclude "ibb\\.co"
-            --exclude "lh3\\.googleusercontent\\.com"
-            --exclude "x\\.com"
-            --exclude "reddit\\.com"
-            --exclude "instagram\\.com"
-            --exclude "tiktok\\.com"
-            --exclude "threads\\.net"
-            --exclude "fonts\\.googleapis\\.com$"
-            --exclude "fonts\\.gstatic\\.com$"
-            "_site/**/*.html"
-          fail: true

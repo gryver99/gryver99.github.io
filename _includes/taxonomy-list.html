@@ -10,7 +10,11 @@
     <p class="taxonomy-page__subtitle">{{ include.subtitle | default: 'Explore posts by topic.' }}</p>
 
     <div class="taxonomy-page__toc">
-      {% assign taxonomy_names = taxonomy_map | map: "first" | sort %}
+      {% assign taxonomy_names = "" | split: "" %}
+      {% for pair in taxonomy_map %}
+        {% assign taxonomy_names = taxonomy_names | push: pair[0] %}
+      {% endfor %}
+      {% assign taxonomy_names = taxonomy_names | sort %}
       {% for name in taxonomy_names %}
         <a href="#{{ name | slugify }}" class="taxonomy-page__chip">{{ name }}</a>
       {% endfor %}
@@ -35,5 +39,6 @@
         </ul>
       </article>
     {% endfor %}
+
   </div>
 </section>

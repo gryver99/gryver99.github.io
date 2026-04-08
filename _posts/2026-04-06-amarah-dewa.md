@@ -7,6 +7,7 @@ release_date: "05/03/26"
 category: Action RPG
 badge: New
 image: https://i.ibb.co/5WTwqH49/screen-4-1.webp   # ← aggiunto, usato dalla card nel widget
+description: "From this divine disaster, you are born: a mortal tempered by chaos, infused with a shattered power — the first of the **Godslayers**. As the deities pour their fury upon the world, your task is to rally the rebels and march on Asgard. Not to plead for mercy, but to topple their thrones and crown yourself a god atop their ruins."
 
 hero_image: https://i.ibb.co/5WTwqH49/screen-4-1.webp
 

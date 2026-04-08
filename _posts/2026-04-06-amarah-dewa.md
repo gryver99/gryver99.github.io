@@ -12,8 +12,8 @@ description: "From this divine disaster, you are born: a mortal tempered by chao
 hero_image: https://i.ibb.co/5WTwqH49/screen-4-1.webp
 
 images:
-  - https://lh3.googleusercontent.com/sitesv/APaQ0SSjmybuWhX1Pr6tevkg6F1RHgKn0-ywDtnKwRm0AKNdVW95I396V2bQ6AZTrlqQNx937OSeG1XWzPcqDfTsGyWz6hCSmfZByMFL1SWvjoUu-s4T8cJKEP1F8D7gWeJktVOPXHFHhYcCdEmh2anGq121dwjmpSKwqtgEE8nVCQbIhlLgegrhl_nIgCgvsbXGKUOOTuhsPVVZePtziKIlQeLI1r81txq61tyICIs=w1280
-  - https://lh3.googleusercontent.com/sitesv/APaQ0SQVyEUIg8JUM6F5eitVTV9y2cgIgXfFHLHJZKnbgJlEQtSJW41Wz667CMw0Ga-qFE-R7NcS-5ZbHRX5BMKlVG_WNri3-pwRLEh0Q-RcxOdKH3c28yFzc6P9mcd-0M1Hl9SQv85z5GReLsr97sRUiLUSAgAWnd4lyQKDEOyDhHJab3LYLMeKHYyi3s5Wtax--Rwrt5kZ8ivusVGvVMvWEv2N3vn7SMZAbZeF=w1280
+  - https://i.ibb.co/v6bK2ppp/screen-1.webp
+  - https://i.ibb.co/kVz22wnc/Copilot-20260307-170537.png=w1280
 
 video_id: 2IEc3UXoTMc
 

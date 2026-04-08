@@ -6,7 +6,7 @@ date: 2026-04-06 15:56:33 +0200
 release_date: "05/03/26"
 category: MMORPG
 badge: New
-image: https://i.ibb.co/5WTwqH49/screen-4-1.webp   # ← aggiunto, usato dalla card nel widget
+image: https://i.ibb.co/5WTwqH49/screen-4-1.webp 
 description: "From this divine disaster, you are born: a mortal tempered by chaos, infused with a shattered power — the first of the **Godslayers**. As the deities pour their fury upon the world, your task is to rally the rebels and march on Asgard. Not to plead for mercy, but to topple their thrones and crown yourself a god atop their ruins."
 
 hero_image: https://i.ibb.co/5WTwqH49/screen-4-1.webp

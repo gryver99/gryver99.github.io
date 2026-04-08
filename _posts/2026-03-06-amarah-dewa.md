@@ -2,7 +2,7 @@
 layout: post
 title: "Amarah Dewa"
 subtitle: "Defy the Gods"
-date: 2026-04-06 15:56:33 +0200
+date: 2026-03-06 15:56:33 +0200
 release_date: "05/03/26"
 category: MMORPG
 badge: New

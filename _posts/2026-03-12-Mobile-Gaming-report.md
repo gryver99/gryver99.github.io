@@ -1,6 +1,6 @@
 ---
 layout: post
-title: " Mobile Gaming report"
+title: "Mobile Gaming report"
 subtitle: "Officially Commands 55% of the Global Video Game Market"
 date: 2026-03-12
 release_date: "2026-03-12"
@@ -8,7 +8,7 @@ category: news
 badge: news
 tags: "news"
 image: https://i.ibb.co/FbN2J3Tv/game-news.jpg
-description: "A joint certification by analytics giant Adjust and industry watchdog GAMES.GG has revealed that mobile gaming is now the undisputed leader of the global gaming landscape. According to the Gaming App Insights Report: 2026 Edition released on March 11, 2026, mobile games now account for 55% of all global gaming revenue, surpassing PC and Console combined.
+description: "A joint certification by analytics giant Adjust and industry watchdog GAMES.GG has revealed that mobile gaming is now the undisputed leader of the global gaming landscape. According to the Gaming App Insights Report: 2026 Edition released on March 11, 2026, mobile games now account for 55% of all global gaming revenue, surpassing PC and Console combined."
 
 hero_image: https://i.ibb.co/FbN2J3Tv/game-news.jpg
 

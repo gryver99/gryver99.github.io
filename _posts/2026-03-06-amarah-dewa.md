@@ -1,16 +1,25 @@
 ---
-layout: post
+layout: game-post
 title: "Amarah Dewa"
 subtitle: "Defy the Gods"
 date: 2026-03-06 15:56:33 +0200
-release_date: "05/03/26"
+release_date: "05/03/2026"
 category: MMORPG
 badge: New
-tags: "MMORPG"
-image: https://i.ibb.co/5WTwqH49/screen-4-1.webp 
-description: "From this divine disaster, you are born: a mortal tempered by chaos, infused with a shattered power — the first of the **Godslayers**. As the deities pour their fury upon the world, your task is to rally the rebels and march on Asgard. Not to plead for mercy, but to topple their thrones and crown yourself a god atop their ruins."
+tags:
+  - MMORPG
+  - Norse Fantasy
+  - Mobile
+image: https://i.ibb.co/5WTwqH49/screen-4-1.webp
+description: "From this divine disaster, you are born: a mortal tempered by chaos, infused with a shattered power — the first of the Godslayers."
 
 hero_image: https://i.ibb.co/5WTwqH49/screen-4-1.webp
+
+info:
+  genre: MMORPG / Action RPG
+  platform: Android / iOS
+  developer: FunPlus / FOV
+  mode: Multiplayer
 
 images:
   - https://i.ibb.co/v6bK2ppp/screen-1.webp

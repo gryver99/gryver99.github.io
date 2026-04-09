@@ -1,6 +1,6 @@
 ---
 layout: post
-title: " Sumo Digital Graphics via Neural Technology"
+title: "Sumo Digital Graphics via Neural Technology"
 subtitle: "Sumo Digital and Arm Partner to Deliver PC-Class Graphics via Neural Technology
 date: 2026-03-12
 release_date: "2026-03-12"

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: " Mobile Gaming report"
-subtitle: "Officially Commands 55% of the Global Video Game Market
+subtitle: "Officially Commands 55% of the Global Video Game Market"
 date: 2026-03-12
 release_date: "2026-03-12"
 category: news

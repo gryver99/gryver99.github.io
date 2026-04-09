@@ -1,7 +1,7 @@
 ---
 layout: post
 title: " Roblox Unveils Incubator and Jumpstart"
-subtitle: "A New Era for Professional and Mature Content 
+subtitle: "A New Era for Professional and Mature Content"
 date: 2026-03-12
 release_date: "2026-03-12"
 category: news
@@ -18,7 +18,7 @@ hero_image: https://i.ibb.co/FbN2J3Tv/game-news.jpg
 
 In a strategic move to capture an older demographic and professionalize its creator ecosystem, Roblox Corporation has officially launched two landmark developer initiatives: Roblox Incubator and Roblox Jumpstart. Announced on March 9, 2026, these programs signal a shift toward "Novel Games"—high-fidelity experiences that challenge the platform’s traditional aesthetic.
 
- Roblox Incubator: Scaling AAA Ambitions
+Roblox Incubator: Scaling AAA Ambitions
 
 The Incubator program is designed for up to 40 elite teams per cohort. It provides a structured path from concept to global launch with direct support from Roblox engineers and designers.
 

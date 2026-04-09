@@ -3,6 +3,14 @@ layout: default
 ---
 
 {% assign p = page %}
+{% assign has_sidebar = false %}
+{% if p.images or p.video_id or p.buttons or p.info or p.rating %}
+  {% assign has_sidebar = true %}
+{% endif %}
+{% assign words = content | number_of_words %}
+{% assign reading_time = words | divided_by: 200 | plus: 1 %}
+
+<div class="gp-progress-bar" id="gpProgress"></div>
 
 <section class="gp-hero" {% if p.hero_image %}style="background-image: url('{{ p.hero_image }}')"{% endif %}>
   <div class="gp-hero-overlay"></div>
@@ -14,15 +22,47 @@ layout: default
 </section>
 
 <div class="gp-wrapper">
-  <div class="gp-layout">
+  <div class="gp-layout{% unless has_sidebar %} gp-layout--full{% endunless %}">
 
+    {% if has_sidebar %}
     <aside class="gp-sidebar">
+
+      {% if p.rating %}
+      <div class="gp-rating-box">
+        <div class="gp-rating-score">{{ p.rating }}<span>/10</span></div>
+        <div class="gp-rating-bar">
+          <div class="gp-rating-fill" style="--pct: {{ p.rating | times: 10 }}%"></div>
+        </div>
+        <div class="gp-rating-label">Editor's Rating</div>
+      </div>
+      {% endif %}
+
+      {% if p.info %}
+      <div class="gp-infobox">
+        {% if p.info.genre %}
+        <div class="gp-info-row"><span class="gp-info-label">Genre</span><span class="gp-info-val">{{ p.info.genre }}</span></div>
+        {% endif %}
+        {% if p.info.platform %}
+        <div class="gp-info-row"><span class="gp-info-label">Platform</span><span class="gp-info-val">{{ p.info.platform }}</span></div>
+        {% endif %}
+        {% if p.info.developer %}
+        <div class="gp-info-row"><span class="gp-info-label">Developer</span><span class="gp-info-val">{{ p.info.developer }}</span></div>
+        {% endif %}
+        {% if p.info.publisher %}
+        <div class="gp-info-row"><span class="gp-info-label">Publisher</span><span class="gp-info-val">{{ p.info.publisher }}</span></div>
+        {% endif %}
+        {% if p.info.mode %}
+        <div class="gp-info-row"><span class="gp-info-label">Mode</span><span class="gp-info-val">{{ p.info.mode }}</span></div>
+        {% endif %}
+      </div>
+      {% endif %}
 
       {% if p.images %}
       <div class="gp-screenshots">
         {% for img in p.images %}
-        <div class="gp-screenshot">
+        <div class="gp-screenshot" onclick="gpLightbox('{{ img }}')">
           <img src="{{ img }}" alt="{{ p.title }} screenshot" loading="lazy">
+          <div class="gp-screenshot-zoom">&#x2922;</div>
         </div>
         {% endfor %}
       </div>
@@ -58,6 +98,7 @@ layout: default
       {% endif %}
 
     </aside>
+    {% endif %}
 
     <article class="gp-content">
 
@@ -66,17 +107,66 @@ layout: default
           {{ p.title }}
           {% if p.subtitle %}<span class="gp-game-sub">— {{ p.subtitle }}</span>{% endif %}
         </h2>
-        {% if p.release_date %}
-        <p class="gp-release">Release Date : {{ p.release_date }}</p>
-        {% endif %}
+        <div class="gp-meta-row">
+          {% if p.release_date %}
+          <span class="gp-release">{{ p.release_date }}</span>
+          {% endif %}
+          <span class="gp-reading-time">{{ reading_time }} min read</span>
+        </div>
         {% if p.badge %}
         <span class="gp-badge gp-badge--{{ p.badge | downcase | replace: ' ', '-' }}">{{ p.badge }}</span>
         {% endif %}
+        {% if p.tags %}
+        <div class="gp-tags">
+          {% for tag in p.tags %}
+          <a href="/tag/{{ tag | slugify }}" class="gp-tag">{{ tag }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
       </div>
 
-      <div class="gp-body">
+      <div id="gp-toc" class="gp-toc" style="display:none">
+        <div class="gp-toc-title">Contents</div>
+        <ul id="gp-toc-list"></ul>
+      </div>
+
+      <div class="gp-body" id="gpBody">
         {{ content }}
       </div>
+
+      <div class="gp-share">
+        <span class="gp-share-label">Share</span>
+        <a class="gp-share-btn" id="gpShareX" target="_blank" rel="noopener" title="X / Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.737-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a class="gp-share-btn" id="gpShareReddit" target="_blank" rel="noopener" title="Reddit">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+        </a>
+        <a class="gp-share-btn" id="gpShareWA" target="_blank" rel="noopener" title="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        </a>
+        <button class="gp-share-btn" id="gpCopyLink" title="Copia link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        </button>
+        <span class="gp-copy-toast" id="gpCopyToast">Link copied!</span>
+      </div>
+
+      {% if page.previous or page.next %}
+      <nav class="gp-prevnext">
+        {% if page.next %}
+        <a href="{{ page.next.url }}" class="gp-prevnext-card" {% if page.next.hero_image %}style="--thumb:url('{{ page.next.hero_image }}')"{% endif %}>
+          <span class="gp-prevnext-dir">&#8592; Previous</span>
+          <span class="gp-prevnext-title">{{ page.next.title }}</span>
+        </a>
+        {% else %}<div></div>{% endif %}
+        {% if page.previous %}
+        <a href="{{ page.previous.url }}" class="gp-prevnext-card gp-prevnext-card--right" {% if page.previous.hero_image %}style="--thumb:url('{{ page.previous.hero_image }}')"{% endif %}>
+          <span class="gp-prevnext-dir">Next &#8594;</span>
+          <span class="gp-prevnext-title">{{ page.previous.title }}</span>
+        </a>
+        {% else %}<div></div>{% endif %}
+      </nav>
+      {% endif %}
 
       {% include related-posts.html max=4 %}
 
@@ -84,12 +174,28 @@ layout: default
   </div>
 </div>
 
+<!-- Lightbox -->
+<div class="gp-lightbox" id="gpLightbox" onclick="this.classList.remove('active')">
+  <button class="gp-lightbox-close" onclick="document.getElementById('gpLightbox').classList.remove('active')">&#x2715;</button>
+  <img id="gpLightboxImg" src="" alt="screenshot">
+</div>
+
 <style>
+/* ── Progress Bar ─────────────────────────────────── */
+.gp-progress-bar {
+  position: fixed; top: 0; left: 0; z-index: 9999;
+  height: 3px; width: 0%;
+  background: linear-gradient(90deg, #1dbb6c, #7fe87a);
+  transition: width .1s linear;
+  pointer-events: none;
+}
+
 /* ── Hero ─────────────────────────────────────────── */
 .gp-hero {
   position: relative;
   height: 340px;
   background: #0a130b center/cover no-repeat;
+  background-attachment: fixed;
   display: flex; align-items: flex-end;
   overflow: hidden;
 }
@@ -127,11 +233,8 @@ layout: default
   margin: 0;
 }
 
-/* ── Wrapper ──────────────────────────────────────── */
-.gp-wrapper {
-  background: #0d1509;
-  min-height: 60vh;
-}
+/* ── Wrapper & Layout ─────────────────────────────── */
+.gp-wrapper { background: #0d1509; min-height: 60vh; }
 .gp-layout {
   max-width: 1100px;
   margin: 0 auto;
@@ -141,18 +244,96 @@ layout: default
   gap: 40px;
   align-items: start;
 }
+.gp-layout--full { grid-template-columns: 1fr; }
+.gp-layout--full .gp-sidebar { display: none; }
 @media (max-width: 860px) {
   .gp-layout { grid-template-columns: 1fr; }
 }
 
 /* ── Sidebar ──────────────────────────────────────── */
-.gp-sidebar { display: flex; flex-direction: column; gap: 14px; }
+.gp-sidebar {
+  display: flex; flex-direction: column; gap: 14px;
+  position: sticky; top: 20px;
+}
 
+/* Rating */
+.gp-rating-box {
+  background: #0a130b;
+  border: 1px solid #1d3a20;
+  border-radius: 8px;
+  padding: 16px 18px;
+  text-align: center;
+}
+.gp-rating-score {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 48px; font-weight: 700;
+  color: #1dbb6c; line-height: 1;
+}
+.gp-rating-score span {
+  font-size: 20px; color: #3a6a40;
+}
+.gp-rating-bar {
+  margin: 10px 0 8px;
+  height: 6px; background: #1d3a20;
+  border-radius: 3px; overflow: hidden;
+}
+.gp-rating-fill {
+  height: 100%;
+  width: var(--pct, 0%);
+  background: linear-gradient(90deg, #1dbb6c, #7fe87a);
+  border-radius: 3px;
+  transition: width 1s cubic-bezier(.4,0,.2,1);
+}
+.gp-rating-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; color: #3a6a40;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+
+/* Info box */
+.gp-infobox {
+  background: #0a130b;
+  border: 1px solid #1d3a20;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.gp-info-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 9px 14px;
+  border-bottom: 1px solid rgba(29,58,32,.5);
+}
+.gp-info-row:last-child { border-bottom: none; }
+.gp-info-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; color: #3a6a40;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.gp-info-val {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px; font-weight: 600;
+  color: #c8e8c0; text-align: right;
+}
+
+/* Screenshots */
 .gp-screenshots { display: flex; flex-direction: column; gap: 10px; }
-.gp-screenshot { border-radius: 8px; overflow: hidden; border: 1px solid #1d3a20; }
+.gp-screenshot {
+  border-radius: 8px; overflow: hidden;
+  border: 1px solid #1d3a20;
+  position: relative; cursor: pointer;
+}
 .gp-screenshot img { width: 100%; display: block; transition: transform .4s; }
 .gp-screenshot:hover img { transform: scale(1.03); }
+.gp-screenshot-zoom {
+  position: absolute; bottom: 8px; right: 8px;
+  background: rgba(10,19,11,.8); color: #1dbb6c;
+  border: 1px solid rgba(29,187,108,.4);
+  border-radius: 4px; padding: 2px 6px;
+  font-size: 14px; line-height: 1.4;
+  opacity: 0; transition: opacity .2s;
+}
+.gp-screenshot:hover .gp-screenshot-zoom { opacity: 1; }
 
+/* Video */
 .gp-video {
   border-radius: 8px; overflow: hidden;
   border: 1px solid #1d3a20;
@@ -160,47 +341,47 @@ layout: default
 }
 .gp-video iframe { width: 100%; height: 100%; display: block; }
 
-.gp-buttons { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
-
+/* Buttons */
+.gp-buttons { display: flex; flex-direction: column; gap: 8px; }
 .gp-btn {
   display: flex; align-items: center; justify-content: center; gap: 10px;
   padding: 13px 20px;
   border-radius: 6px; border: 1px solid #1d3a20;
-  background: #0d1f10;
-  color: #c8e8c0;
+  background: #0d1f10; color: #c8e8c0;
   font-family: 'Rajdhani', sans-serif;
   font-size: 13px; font-weight: 700;
   letter-spacing: .12em; text-transform: uppercase;
-  text-decoration: none;
-  transition: all .2s;
+  text-decoration: none; transition: all .2s;
 }
 .gp-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 .gp-btn:hover { background: #1d3a20; border-color: #1dbb6c; color: #7fe87a; }
-
 .gp-btn--playstore { background: #0d2e14; border-color: #1dbb6c; color: #1dbb6c; }
 .gp-btn--playstore:hover { background: #1dbb6c; color: #051a0e; }
-
 .gp-btn--redeem { background: #1e1800; border-color: #c8a84b; color: #c8a84b; }
 .gp-btn--redeem:hover { background: #c8a84b; color: #1e1800; }
 
-/* ── Content ──────────────────────────────────────── */
+/* ── Meta ─────────────────────────────────────────── */
 .gp-meta { margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid #1d3a20; }
-
 .gp-game-title {
   font-family: 'Rajdhani', sans-serif;
   font-size: 26px; font-weight: 700;
   color: #e8f5e0; letter-spacing: .04em;
   text-transform: uppercase; margin: 0 0 10px;
 }
-.gp-game-sub {
-  font-size: 18px; color: #7fe87a;
-  font-weight: 600; letter-spacing: .06em;
+.gp-game-sub { font-size: 18px; color: #7fe87a; font-weight: 600; letter-spacing: .06em; }
+.gp-meta-row {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 10px;
 }
-.gp-release {
+.gp-release, .gp-reading-time {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 12px; color: #3a6a40;
-  letter-spacing: .08em; margin: 0 0 10px;
+  font-size: 11px; color: #3a6a40;
+  letter-spacing: .08em;
 }
+.gp-release::before { content: '📅 '; }
+.gp-reading-time::before { content: '⏱ '; }
+
+/* Badge */
 .gp-badge {
   display: inline-block;
   font-family: 'JetBrains Mono', monospace;
@@ -213,9 +394,50 @@ layout: default
 .gp-badge--coming-soon  { background:rgba(100,160,255,.15); color:#64a0ff; border:1px solid rgba(100,160,255,.4); }
 .gp-badge--patch-notes  { background:rgba(180,120,224,.15); color:#b478e0; border:1px solid rgba(180,120,224,.4); }
 
-/* ── Markdown body ────────────────────────────────── */
-.gp-body { color: #a8c8a0; line-height: 1.75; font-size: 15px; }
+/* Tags */
+.gp-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.gp-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+  color: #3a6a40; border: 1px solid #1d3a20;
+  background: #0a130b;
+  padding: 3px 9px; border-radius: 3px;
+  text-decoration: none; transition: all .2s;
+}
+.gp-tag:hover { color: #1dbb6c; border-color: #1dbb6c; background: rgba(29,187,108,.08); }
 
+/* ── TOC ──────────────────────────────────────────── */
+.gp-toc {
+  background: #0a130b;
+  border: 1px solid #1d3a20;
+  border-left: 3px solid #1dbb6c;
+  border-radius: 6px;
+  padding: 16px 18px;
+  margin-bottom: 28px;
+}
+.gp-toc-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: #1dbb6c; margin-bottom: 10px;
+}
+.gp-toc ul { list-style: none; padding: 0; margin: 0; }
+.gp-toc ul li { padding: 3px 0; border: none; }
+.gp-toc ul li::before { display: none; }
+.gp-toc ul li a {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px; font-weight: 600;
+  color: #7fe87a; text-decoration: none;
+  letter-spacing: .04em;
+  transition: color .2s;
+}
+.gp-toc ul li a:hover { color: #1dbb6c; }
+.gp-toc ul li.toc-h3 { padding-left: 14px; }
+.gp-toc ul li.toc-h3 a { font-size: 12px; color: #3a6a40; font-weight: 500; }
+.gp-toc ul li.toc-h3 a:hover { color: #7fe87a; }
+
+/* ── Body ─────────────────────────────────────────── */
+.gp-body { color: #a8c8a0; line-height: 1.75; font-size: 15px; }
 .gp-body h2, .gp-body h3 {
   font-family: 'Rajdhani', sans-serif;
   color: #e8f5e0; letter-spacing: .04em;
@@ -230,9 +452,7 @@ layout: default
   background: #1dbb6c; border-radius: 2px; flex-shrink: 0;
 }
 .gp-body h3 { font-size: 15px; color: #7fe87a; }
-
 .gp-body p { margin: 0 0 14px; }
-
 .gp-body ul { padding-left: 0; list-style: none; margin: 0 0 16px; }
 .gp-body ul li {
   padding: 6px 0 6px 18px;
@@ -246,14 +466,120 @@ layout: default
   border-radius: 50%; background: #1dbb6c;
 }
 .gp-body ul li strong { color: #c8e8c0; }
-
 .gp-body a { color: #1dbb6c; text-decoration: none; }
 .gp-body a:hover { color: #7fe87a; text-decoration: underline; }
 
-/* ── Post Correlati UI ────────────────────────────── */
+/* Scroll fade-in */
+.gp-fade {
+  opacity: 0; transform: translateY(16px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.gp-fade.visible { opacity: 1; transform: none; }
+
+/* ── Share ────────────────────────────────────────── */
+.gp-share {
+  display: flex; align-items: center; gap: 8px;
+  padding: 20px 0;
+  border-top: 1px dashed #1d3a20;
+  margin-top: 36px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.gp-share-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; color: #3a6a40;
+  letter-spacing: .12em; text-transform: uppercase;
+  margin-right: 4px;
+}
+.gp-share-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 6px;
+  background: #0a130b; border: 1px solid #1d3a20;
+  color: #3a6a40; cursor: pointer;
+  text-decoration: none; transition: all .2s;
+}
+.gp-share-btn svg { width: 15px; height: 15px; }
+.gp-share-btn:hover { background: #1d3a20; border-color: #1dbb6c; color: #1dbb6c; }
+.gp-copy-toast {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; color: #1dbb6c;
+  letter-spacing: .08em;
+  opacity: 0; transition: opacity .3s;
+  pointer-events: none;
+}
+.gp-copy-toast.show { opacity: 1; }
+
+/* ── Prev / Next ──────────────────────────────────── */
+.gp-prevnext {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+.gp-prevnext-card {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 14px 16px;
+  background: #0a130b;
+  border: 1px solid #1d3a20;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all .25s;
+  position: relative; overflow: hidden;
+}
+.gp-prevnext-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--thumb) center/cover no-repeat;
+  opacity: .08;
+  transition: opacity .25s;
+}
+.gp-prevnext-card:hover { border-color: #1dbb6c; transform: translateY(-2px); }
+.gp-prevnext-card:hover::before { opacity: .15; }
+.gp-prevnext-card--right { text-align: right; }
+.gp-prevnext-dir {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; color: #1dbb6c;
+  letter-spacing: .1em; text-transform: uppercase;
+  position: relative;
+}
+.gp-prevnext-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px; font-weight: 700;
+  color: #e8f5e0; letter-spacing: .04em;
+  text-transform: uppercase;
+  line-height: 1.2; position: relative;
+}
+
+/* ── Lightbox ─────────────────────────────────────── */
+.gp-lightbox {
+  position: fixed; inset: 0; z-index: 10000;
+  background: rgba(5,10,6,.95);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity .3s;
+}
+.gp-lightbox.active { opacity: 1; pointer-events: all; }
+.gp-lightbox img {
+  max-width: 90vw; max-height: 88vh;
+  border-radius: 8px;
+  border: 1px solid #1d3a20;
+  box-shadow: 0 0 60px rgba(29,187,108,.15);
+}
+.gp-lightbox-close {
+  position: absolute; top: 20px; right: 24px;
+  background: #0a130b; border: 1px solid #1d3a20;
+  color: #7fe87a; border-radius: 6px;
+  width: 36px; height: 36px;
+  font-size: 16px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s;
+}
+.gp-lightbox-close:hover { border-color: #1dbb6c; color: #1dbb6c; }
+
+/* ── Related ──────────────────────────────────────── */
 .gp-related {
-  margin-top: 50px;
-  padding-top: 30px;
+  margin-top: 50px; padding-top: 30px;
   border-top: 1px dashed #1d3a20;
 }
 .gp-related-title {
@@ -269,31 +595,108 @@ layout: default
   gap: 16px;
 }
 .gp-related-card {
-  text-decoration: none;
-  background: #0a130b;
-  border: 1px solid #1d3a20;
-  border-radius: 8px;
+  text-decoration: none; background: #0a130b;
+  border: 1px solid #1d3a20; border-radius: 8px;
   overflow: hidden;
   transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .gp-related-card:hover {
-  border-color: #1dbb6c;
-  transform: translateY(-4px);
-  box-shadow: 0 4px 20px rgba(29, 187, 108, 0.15);
+  border-color: #1dbb6c; transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(29,187,108,.15);
 }
 .gp-related-thumb {
-  height: 110px;
-  background-size: cover;
-  background-position: center;
+  height: 110px; background-size: cover; background-position: center;
   border-bottom: 1px solid #1d3a20;
 }
 .gp-related-name {
-  display: block;
-  padding: 12px;
+  display: block; padding: 12px;
   font-family: 'Rajdhani', sans-serif;
   font-size: 14px; font-weight: 600;
-  color: #e8f5e0;
-  line-height: 1.3;
-  text-transform: uppercase;
+  color: #e8f5e0; line-height: 1.3; text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .gp-prevnext { grid-template-columns: 1fr; }
 }
 </style>
+
+<script>
+(function () {
+
+  /* ── Progress bar ── */
+  var bar = document.getElementById('gpProgress');
+  window.addEventListener('scroll', function () {
+    var s = document.documentElement;
+    var pct = (s.scrollTop / (s.scrollHeight - s.clientHeight)) * 100;
+    bar.style.width = pct + '%';
+  }, { passive: true });
+
+  /* ── TOC ── */
+  var body  = document.getElementById('gpBody');
+  var toc   = document.getElementById('gp-toc');
+  var list  = document.getElementById('gp-toc-list');
+  if (body && toc && list) {
+    var headings = body.querySelectorAll('h2, h3');
+    if (headings.length > 2) {
+      headings.forEach(function (h, i) {
+        var id = 'gp-h-' + i;
+        h.id = id;
+        var li = document.createElement('li');
+        li.className = h.tagName === 'H3' ? 'toc-h3' : 'toc-h2';
+        var a = document.createElement('a');
+        a.href = '#' + id;
+        a.textContent = h.textContent;
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        li.appendChild(a);
+        list.appendChild(li);
+      });
+      toc.style.display = 'block';
+    }
+  }
+
+  /* ── Share buttons ── */
+  var url   = encodeURIComponent(window.location.href);
+  var title = encodeURIComponent(document.title);
+  var x   = document.getElementById('gpShareX');
+  var rd  = document.getElementById('gpShareReddit');
+  var wa  = document.getElementById('gpShareWA');
+  var cp  = document.getElementById('gpCopyLink');
+  var toast = document.getElementById('gpCopyToast');
+  if (x)  x.href  = 'https://x.com/intent/tweet?url=' + url + '&text=' + title;
+  if (rd) rd.href = 'https://reddit.com/submit?url=' + url + '&title=' + title;
+  if (wa) wa.href = 'https://wa.me/?text=' + title + '%20' + url;
+  if (cp) cp.addEventListener('click', function () {
+    navigator.clipboard.writeText(window.location.href).then(function () {
+      toast.classList.add('show');
+      setTimeout(function () { toast.classList.remove('show'); }, 2000);
+    });
+  });
+
+  /* ── Lightbox ── */
+  window.gpLightbox = function (src) {
+    var lb  = document.getElementById('gpLightbox');
+    var img = document.getElementById('gpLightboxImg');
+    img.src = src;
+    lb.classList.add('active');
+  };
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') document.getElementById('gpLightbox').classList.remove('active');
+  });
+
+  /* ── Scroll fade-in ── */
+  if ('IntersectionObserver' in window) {
+    var els = document.querySelectorAll('.gp-body p, .gp-body h2, .gp-body h3, .gp-body ul, .gp-body li');
+    els.forEach(function (el) { el.classList.add('gp-fade'); });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+})();
+</script>

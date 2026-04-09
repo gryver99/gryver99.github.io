@@ -4,13 +4,13 @@ title: " Google Play Cross-Buy"
 subtitle: "The New Frontier of Competitive Battling "
 date: 2026-03-12
 release_date: "2026-03-12"
-category: Google Play
+category: news
 badge: news
 tags: "news"
-image: https://freelogopng.com/images/all_img/1664287128google-play-store-logo-png.png
+image: https://i.ibb.co/FbN2J3Tv/game-news.jpg
 description: "Google is officially blurring the lines between mobile and desktop gaming. At the 2026 Game Developers Conference (GDC), the tech giant announced a major update to the Google Play Store: a cross-platform purchase model that allows users to buy a game once and own it across both Android devices and Windows PCs."
 
-hero_image: https://freelogopng.com/images/all_img/1664287128google-play-store-logo-png.png
+hero_image: https://i.ibb.co/FbN2J3Tv/game-news.jpg
 
 ---
 

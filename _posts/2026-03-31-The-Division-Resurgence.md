@@ -35,7 +35,7 @@ buttons:
     type: playstore
 ---
 
-## TThe Division Resurgence: Gameplay Deep Dive – A True Tactical RPG on Mobile 
+## The Division Resurgence: Gameplay Deep Dive – A True Tactical RPG on Mobile 
 
 Ubisoft’s latest mobile entry isn't just a spin-off; it is a full-scale Third-Person Tactical RPG that successfully ports the core "The Division" experience to touchscreens. Built on Unreal Engine 4, the gameplay focuses on cover-based shooting, deep loot systems, and squad-based tactics in a massive open-world New York City.
 

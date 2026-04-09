@@ -15,7 +15,7 @@ description: "Return to Planet 4546B in Subnautica: Below Zero, the long-awaited
 hero_image: https://i.ibb.co/3JLTFmv/Dissidia-Duellum-Final-Fantasy-Gameplay.jpg
 
 info:
-  genre: Action RPG
+  genre: Action RPG / FF
   platform: Android / IOS
   developer: Square Enix / NHN PlayArt
   mode: Multiplayer

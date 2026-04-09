@@ -6,14 +6,16 @@ date: 2026-03-11
 release_date: "Coming Soon"
 category: RPG
 badge: Coming Soon
-tags: "Coming Soon"
+tags:
+ - RPG
+ - DragonQuest
 image: https://i.ibb.co/zhdRnnG2/thumbnail-pv.jpg
 description: "Dragon Quest Smash/Grow isn't your grandfather’s turn-based RPG. Square Enix has reinvented the franchise’s DNA, fusing the timeless charm of the series with the adrenaline-pumping mechanics of modern Roguelites. In a world where every playthrough is unique, your ability to adapt is the only thing standing between eternal glory and a quick trip back to the start!"
 
 hero_image: https://i.ibb.co/zhdRnnG2/thumbnail-pv.jpg
 
 info:
-  genre: RPG / Action RPG
+  genre: RPG / Dragon Quest
   platform: Android / iOS
   developer: SQUARE ENIX Co. / Ltd.
   mode: Multiplayer

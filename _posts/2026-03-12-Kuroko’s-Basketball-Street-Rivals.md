@@ -6,7 +6,10 @@ date: 2026-03-12
 release_date: "2026-03-11"
 category: Sports
 badge: New
-tags: "COLLABORATIVE"
+tags:
+ - PVP
+ - Sports
+ - Basketball
 image: https://play-lh.googleusercontent.com/f5w65MYrzXDAJh64cLzMVAppj6zNdRaS6JiktrLhlQrGbZFqP0UFiP9wgPY1xXB2Xdtx-tEtcDTYZzncwwpbxw=w1052-h592-rw
 description: "Kuroko’s Basketball Street Rivals is the official 3D real-time basketball competitive mobile game based on the world-renowned anime series Kuroko no Basket. Developed to bring the high-octane energy of the Generation of Miracles to your smartphone, this title blends tactical sports simulation with the flashy, superhuman abilities that fans of the series love."
 

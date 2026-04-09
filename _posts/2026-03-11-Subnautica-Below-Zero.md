@@ -6,14 +6,17 @@ date: 2026-03-11
 release_date: "2026-03-10"
 category: Open World
 badge: New
-tags: "PREMIUM"
+tags:
+ - PREMIUM
+ - Survival
+ - OpenWorld
 image: https://i.ibb.co/VfmqYVh/unnamed-2.webp 
 description: "Return to Planet 4546B in Subnautica: Below Zero, the long-awaited sequel to the acclaimed open-world underwater survival hit."
 
 hero_image: https://i.ibb.co/VfmqYVh/unnamed-2.webp
 
 info:
-  genre: Survival
+  genre: Survival / Open World
   platform: Android / IOS
   developer: Unknown Worlds Entertainment.
   mode: Single-player

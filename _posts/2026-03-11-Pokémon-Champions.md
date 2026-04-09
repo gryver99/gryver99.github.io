@@ -6,18 +6,19 @@ date: 2026-03-11
 release_date: "Coming Soon"
 category: RPG
 badge: Coming Soon
-tags: "Coming Soon"
+tags:
+ - RPG
+ - Pokemon
 image: https://i.ibb.co/XnqrpBx/pokemon-champions-2.jpg 
 description: "Return to Planet 4546B in Subnautica: Below Zero, the long-awaited sequel to the acclaimed open-world underwater survival hit."
 
 hero_image: https://i.ibb.co/XnqrpBx/pokemon-champions-2.jpg
 
 info:
-  genre: RPG / Action RPG
+  genre: RPG / Pokemon
   platform: Android / iOS
   developer: The Pokémon Company / Nintendo.
   mode: Multiplayer
-
 
 images:
   - https://i.ibb.co/BbMDZ4y/Pokemon-Champions-250722-05.png

@@ -6,7 +6,9 @@ date: 2026-03-12
 release_date: "Coming Soon"
 category: RPG
 badge: Coming Soon
-tags: "Coming Soon"
+tags:
+ - RPG
+ - Anime
 image: https://i.ibb.co/LzBWBTyk/personnages-de-Bleach-Mirrors-High-en-action.webp
 description: "The BLEACH franchise is entering a new era. Following the massive success of the Thousand-Year Blood War anime, Bandai Namco Entertainment has officially announced BLEACH: Mirrors High, a high-budget smartphone title set to launch globally in Summer 2026."
 

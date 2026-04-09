@@ -8,15 +8,14 @@ category: MMORPG
 badge: New
 tags:
   - MMORPG
-  - Norse Fantasy
-  - Mobile
+  - Autoplay
 image: https://i.ibb.co/5WTwqH49/screen-4-1.webp
 description: "From this divine disaster, you are born: a mortal tempered by chaos, infused with a shattered power — the first of the Godslayers."
 
 hero_image: https://i.ibb.co/5WTwqH49/screen-4-1.webp
 
 info:
-  genre: MMORPG / Action RPG
+  genre: MMORPG / Autoplay
   platform: Android / iOS
   developer: FunPlus / FOV
   mode: Multiplayer

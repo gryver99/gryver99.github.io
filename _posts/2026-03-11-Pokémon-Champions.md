@@ -12,6 +12,13 @@ description: "Return to Planet 4546B in Subnautica: Below Zero, the long-awaited
 
 hero_image: https://i.ibb.co/XnqrpBx/pokemon-champions-2.jpg
 
+info:
+  genre: RPG / Action RPG
+  platform: Android / iOS
+  developer: The Pokémon Company / Nintendo.
+  mode: Multiplayer
+
+
 images:
   - https://i.ibb.co/BbMDZ4y/Pokemon-Champions-250722-05.png
   - https://i.ibb.co/kVckgTvr/Pokemon-Champions.jpg

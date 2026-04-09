@@ -12,6 +12,12 @@ description: "Dragon Quest Smash/Grow isn't your grandfather’s turn-based RPG.
 
 hero_image: https://i.ibb.co/zhdRnnG2/thumbnail-pv.jpg
 
+info:
+  genre: RPG / Action RPG
+  platform: Android / iOS
+  developer: SQUARE ENIX Co. / Ltd.
+  mode: Multiplayer
+
 images:
   - https://i.ibb.co/zhdRnnG2/thumbnail-pv.jpg
   - https://i.ibb.co/yc1SLK9b/Dragon-Quest-Smash-Grow-Banner.jpg

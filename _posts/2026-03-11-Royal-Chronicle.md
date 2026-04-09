@@ -12,6 +12,12 @@ description: "On a vast continent suspended between myth and war, where ancient 
 
 hero_image: https://i.ibb.co/VWPZnR7R/BCO-c731fdf1-37ba-49f0-bf6c-2b69f23666dc.png
 
+info:
+  genre: RTS
+  platform: Android
+  developer: Metapolitan Games Limited.
+  mode: Multiplayer
+
 images:
   - https://i.ibb.co/m5mwhRD1/5e070fe15091b8331b421d55c979ea99.webp
   - https://i.ibb.co/gZXCBm4p/46ec3cd161d215cc19327e0ab6645a40.webp

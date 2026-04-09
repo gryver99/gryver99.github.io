@@ -12,6 +12,12 @@ description: "Return to Planet 4546B in Subnautica: Below Zero, the long-awaited
 
 hero_image: https://i.ibb.co/VfmqYVh/unnamed-2.webp
 
+info:
+  genre: Survival
+  platform: Android / IOS
+  developer: Unknown Worlds Entertainment.
+  mode: Single-player
+
 images:
   - https://i.ibb.co/Kz7krBgt/unnamed-2.webp
   - https://i.ibb.co/7J005Yfd/unnamed-2-jpg.webp

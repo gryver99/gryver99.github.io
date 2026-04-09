@@ -12,6 +12,12 @@ description: "The BLEACH franchise is entering a new era. Following the massive 
 
 hero_image: htthttps://i.ibb.co/LzBWBTyk/personnages-de-Bleach-Mirrors-High-en-action.webp
 
+info:
+  genre: RPG
+  platform: Android / IOS
+  developer: Bandai Namco Entertainment.
+  mode: Multiplayer
+
 images:
   - https://i.ibb.co/7Nd7MvMD/bleach-cov-jpg-1600x900-crop-q85.webp
   - https://i.ibb.co/117C0Pb/personnages-de-Bleach-Mirrors-High-en-action.png

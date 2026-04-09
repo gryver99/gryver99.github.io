@@ -4,13 +4,21 @@ title: " Dissidia Duellum Final Fantasy"
 subtitle: "HE HAS FINALLY BEEN RELEASED"
 date: 2026-03-24
 release_date: "2026-03-24"
-category: ACTION
+category: ACTION RPG
 badge: New
-tags: "FF"
+tags: 
+ - FF
+ - Action RPG
 image: https://i.ibb.co/3JLTFmv/Dissidia-Duellum-Final-Fantasy-Gameplay.jpg 
 description: "Return to Planet 4546B in Subnautica: Below Zero, the long-awaited sequel to the acclaimed open-world underwater survival hit."
 
 hero_image: https://i.ibb.co/3JLTFmv/Dissidia-Duellum-Final-Fantasy-Gameplay.jpg
+
+info:
+  genre: Action RPG
+  platform: Android / IOS
+  developer: Square Enix / NHN PlayArt
+  mode: Multiplayer
 
 images:
   - https://i.ibb.co/3JLTFmv/Dissidia-Duellum-Final-Fantasy-Gameplay.jpg

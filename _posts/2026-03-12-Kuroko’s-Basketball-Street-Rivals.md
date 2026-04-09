@@ -12,6 +12,12 @@ description: "Kuroko’s Basketball Street Rivals is the official 3D real-time b
 
 hero_image: https://play-lh.googleusercontent.com/f5w65MYrzXDAJh64cLzMVAppj6zNdRaS6JiktrLhlQrGbZFqP0UFiP9wgPY1xXB2Xdtx-tEtcDTYZzncwwpbxw=w1052-h592-rw
 
+info:
+  genre: Sports / Basketball
+  platform: Android / IOS
+  developer: LMD Games
+  mode: Multiplayer
+
 images:
   - https://i.ibb.co/TBdjMGBx/mall-1.webp
   - https://i.ibb.co/5Wpd63bz/maxresdefault.jpg

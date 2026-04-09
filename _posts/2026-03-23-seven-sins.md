@@ -6,11 +6,20 @@ date: 2026-03-23
 release_date: "23/03/26"
 category: Action RPG
 badge: New
-tags: "Action"
+tags:
+ - Action
+ - Open World
+ - Anime
 image: https://i.ibb.co/ymmybjsj/maxresdefault-2.jpg
 description: "Discover Seven Deadly Sins: Origin with max graphics settings — stunning visuals and smooth gameplay on mobile."
 
 hero_image: https://i.ibb.co/ymmybjsj/maxresdefault-2.jpg
+
+info:
+  genre: Open World / Action RPG
+  platform: Android / IOS
+  developer: Netmarble
+  mode: Multiplayer / Cross-play
 
 images:
   - https://i.ibb.co/ZRDPq7BQ/The-Seven-Deadly-Sins-Origin-20251213-06.jpg

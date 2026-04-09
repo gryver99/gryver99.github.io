@@ -12,6 +12,12 @@ description: "HEAVENHELLS is an anime-style real‑time RPG by GameLeaf. Lead a 
 
 hero_image: https://i.ibb.co/MkkZ9tYk/1.jpg
 
+info:
+  genre: ANIME / Action RPG
+  platform: Android / iOS
+  developer: CloverGames
+  mode: Multiplayer
+
 images:
   - https://i.ibb.co/CcdLXmT/witch.png
   - https://i.ibb.co/d4F7Bcpz/demon.png

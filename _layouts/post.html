@@ -119,7 +119,7 @@ layout: default
         {% if p.tags %}
         <div class="gp-tags">
           {% for tag in p.tags %}
-          <a href="/tag/{{ tag | slugify }}" class="gp-tag">{{ tag }}</a>
+          <span class="gp-tag">{{ tag }}</span>
           {% endfor %}
         </div>
         {% endif %}
@@ -404,7 +404,6 @@ layout: default
   padding: 3px 9px; border-radius: 3px;
   text-decoration: none; transition: all .2s;
 }
-.gp-tag:hover { color: #1dbb6c; border-color: #1dbb6c; background: rgba(29,187,108,.08); }
 
 /* ── TOC ──────────────────────────────────────────── */
 .gp-toc {

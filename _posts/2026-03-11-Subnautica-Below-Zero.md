@@ -9,7 +9,7 @@ badge: New
 tags:
  - PREMIUM
  - Survival
- - OpenWorld
+ - Open World
 image: https://i.ibb.co/VfmqYVh/unnamed-2.webp 
 description: "Return to Planet 4546B in Subnautica: Below Zero, the long-awaited sequel to the acclaimed open-world underwater survival hit."
 

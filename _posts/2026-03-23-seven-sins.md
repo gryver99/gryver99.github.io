@@ -8,7 +8,7 @@ category: Action RPG
 badge: New
 tags:
  - Action RPG
- - OpenWorld
+ - Open World
  - Anime
 image: https://i.ibb.co/ymmybjsj/maxresdefault-2.jpg
 description: "Discover Seven Deadly Sins: Origin with max graphics settings — stunning visuals and smooth gameplay on mobile."

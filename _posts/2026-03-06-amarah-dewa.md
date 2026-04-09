@@ -1,5 +1,5 @@
 ---
-layout: game-post
+layout: post
 title: "Amarah Dewa"
 subtitle: "Defy the Gods"
 date: 2026-03-06 15:56:33 +0200

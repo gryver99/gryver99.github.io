@@ -1,4 +1,4 @@
-# GameLeaf (`gryver99.github.io`)
+# GameLeaf (www.gameleaf.space)
 
 Jekyll static site for GameLeaf news, posts, featured videos, and search.
 

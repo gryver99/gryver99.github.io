@@ -4,17 +4,230 @@ title: Search
 permalink: /search/
 ---
 
-<section class="search-page">
-  <div class="container">
-    <h1>Search results</h1>
+<div class="sp-wrapper">
+  <div class="sp-container">
 
-    <form id="searchForm" role="search" aria-label="Search form" novalidate>
+    <div class="sp-header">
+      <span class="sp-label">Search</span>
+      <h1 class="sp-title">Find your game</h1>
+    </div>
+
+    <form id="searchForm" class="sp-form" role="search" aria-label="Search form" novalidate>
       <label for="q" class="sr-only">Search</label>
-      <input id="q" name="q" type="search" value="" placeholder="Search..." aria-label="Search" required minlength="2" maxlength="80" pattern=".*\S.*" title="Insert at least 2 non-space characters.">
-      <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
+      <div class="sp-input-wrap">
+        <svg class="sp-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input id="q" name="q" type="search" value=""
+          placeholder="Title, tag, keyword…"
+          aria-label="Search"
+          required minlength="2" maxlength="80"
+          pattern=".*\S.*"
+          title="Insert at least 2 non-space characters.">
+        <button type="submit" aria-label="Submit search">Search</button>
+      </div>
     </form>
 
-    <div id="searchMeta" class="search-meta" aria-live="polite"></div>
-    <ul id="searchResults" class="search-results" role="list"></ul>
+    <div id="searchMeta" class="sp-meta" aria-live="polite"></div>
+    <ul id="searchResults" class="sp-results" role="list"></ul>
+
   </div>
-</section>
+</div>
+
+<style>
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); border: 0;
+}
+
+/* ── Wrapper ── */
+.sp-wrapper {
+  background: #0d1509;
+  min-height: 80vh;
+  padding: 60px 24px 100px;
+}
+.sp-container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.sp-header { margin-bottom: 32px; }
+.sp-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: #1dbb6c;
+  border: 1px solid rgba(29,187,108,.4);
+  background: rgba(29,187,108,.1);
+  padding: 3px 10px; border-radius: 3px;
+  display: inline-block; margin-bottom: 14px;
+}
+.sp-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700; color: #e8f5e0;
+  letter-spacing: .06em; text-transform: uppercase;
+  margin: 0; line-height: 1;
+}
+
+/* ── Form ── */
+.sp-form { margin-bottom: 36px; }
+.sp-input-wrap {
+  display: flex; align-items: center;
+  background: #0a130b;
+  border: 1px solid #1d3a20;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color .2s;
+}
+.sp-input-wrap:focus-within { border-color: #1dbb6c; }
+
+.sp-input-icon {
+  width: 18px; height: 18px;
+  color: #3a6a40; flex-shrink: 0;
+  margin-left: 16px;
+}
+.sp-input-wrap input {
+  flex: 1;
+  background: transparent; border: none; outline: none;
+  padding: 14px 16px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px; font-weight: 500;
+  color: #e8f5e0;
+  letter-spacing: .04em;
+}
+.sp-input-wrap input::placeholder { color: #3a6a40; }
+.sp-input-wrap input::-webkit-search-cancel-button { display: none; }
+
+.sp-input-wrap button {
+  background: #1dbb6c; border: none;
+  padding: 0 22px; height: 100%;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: #051a0e; cursor: pointer;
+  transition: background .2s;
+  white-space: nowrap;
+  min-height: 50px;
+}
+.sp-input-wrap button:hover { background: #7fe87a; }
+
+/* ── Meta ── */
+.sp-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: #3a6a40;
+  letter-spacing: .08em;
+  margin-bottom: 20px;
+  min-height: 18px;
+}
+
+/* ── Results ── */
+.sp-results {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 12px;
+}
+
+.search-item a {
+  display: flex; gap: 16px; align-items: flex-start;
+  background: #0a130b;
+  border: 1px solid #1d3a20;
+  border-radius: 8px;
+  padding: 18px 20px;
+  text-decoration: none;
+  transition: all .25s cubic-bezier(.4,0,.2,1);
+  overflow: hidden;
+  position: relative;
+}
+.search-item a::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px; background: #1dbb6c;
+  transform: scaleY(0);
+  transition: transform .25s;
+  border-radius: 0 2px 2px 0;
+}
+.search-item a:hover {
+  border-color: #1dbb6c;
+  transform: translateX(4px);
+  box-shadow: 0 4px 20px rgba(29,187,108,.1);
+}
+.search-item a:hover::before { transform: scaleY(1); }
+
+/* Thumbnail se disponibile */
+.search-item a img {
+  width: 80px; height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #1d3a20;
+  flex-shrink: 0;
+}
+
+.search-item-body { flex: 1; min-width: 0; }
+
+.search-item h2 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 18px; font-weight: 700;
+  color: #e8f5e0; letter-spacing: .04em;
+  text-transform: uppercase;
+  margin: 0 0 6px; line-height: 1.2;
+}
+.search-item .excerpt {
+  font-size: 13px; color: #7a9a74;
+  line-height: 1.6; margin: 0 0 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.search-item .meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; color: #3a6a40;
+  letter-spacing: .08em;
+  margin: 0;
+}
+
+/* Highlight */
+.search-item mark {
+  background: rgba(29,187,108,.2);
+  color: #7fe87a;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+
+/* No results */
+.sp-results:empty + .sp-noresults {
+  text-align: center; padding: 60px 0;
+  color: #3a6a40;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px; letter-spacing: .06em;
+}
+</style>
+
+<script>
+/* ── Patch renderResults to inject thumbnails ── */
+document.addEventListener('DOMContentLoaded', function () {
+  var _origRender = null;
+
+  var checkInterval = setInterval(function () {
+    var resultsEl = document.getElementById('searchResults');
+    if (!resultsEl) return;
+    clearInterval(checkInterval);
+
+    var observer = new MutationObserver(function () {
+      resultsEl.querySelectorAll('.search-item a').forEach(function (link) {
+        if (link.dataset.patched) return;
+        link.dataset.patched = '1';
+
+        var body = document.createElement('div');
+        body.className = 'search-item-body';
+
+        while (link.firstChild) body.appendChild(link.firstChild);
+        link.appendChild(body);
+      });
+    });
+    observer.observe(resultsEl, { childList: true, subtree: false });
+  }, 50);
+});
+</script>

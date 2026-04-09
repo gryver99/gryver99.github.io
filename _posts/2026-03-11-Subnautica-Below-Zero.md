@@ -4,7 +4,7 @@ title: " Subnautica: Below Zero"
 subtitle: "Defy the Gods"
 date: 2026-03-11
 release_date: "2026-03-10"
-category: MMORPG
+category: Open World
 badge: New
 tags: "PREMIUM"
 image: https://i.ibb.co/VfmqYVh/unnamed-2.webp 

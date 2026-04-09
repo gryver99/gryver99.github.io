@@ -7,7 +7,7 @@ release_date: "2026-03-10"
 category: RPG
 badge: Patch Notes
 tags:
- - Version "4.1"
+ - Version Update
 image: https://sm.ign.com/ign_za/gallery/h/honkai-sta/honkai-star-rail-screenshots_prfk.jpg
 description: "Prepare to witness the threads of fate tighten as the Trailblazer’s journey reaches a breathtaking turning point. In Version 4.1, Unraveled for Daybreak, HoYoverse takes players back to the heart of the cosmos, where hidden truths about the Aeons begin to surface and old alliances are tested under the light of a dying star."
 

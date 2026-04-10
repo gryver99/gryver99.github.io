@@ -24,7 +24,9 @@ info:
 images:
   - https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/Street%20King%201.webp
   - https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/Street%20King%202.webp
-  - https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/Street%20King%203.webp
+
+video_id: zzjw5eBgtc8
+
 buttons:
   - label: "Play Store"
     url: "https://play.google.com/store/apps/details?id=com.px.pd01"

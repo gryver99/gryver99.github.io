@@ -614,8 +614,17 @@ layout: default
   color: #e8f5e0; line-height: 1.3; text-transform: uppercase;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 860px) {
   .gp-prevnext { grid-template-columns: 1fr; }
+  
+  .gp-sidebar {
+    position: static;
+    order: 2;
+  }
+
+  .gp-content {
+    order: 1;
+  }
 }
 </style>
 

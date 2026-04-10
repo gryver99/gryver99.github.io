@@ -2,7 +2,7 @@
 layout: post
 title: " Royal Chronicle"
 subtitle: "Conquer, Command, Triumph"
-date: 2026-03-11
+date: 2026-03-11T00:00:00Z
 release_date: "2026-03-06"
 category: RTS
 badge: New

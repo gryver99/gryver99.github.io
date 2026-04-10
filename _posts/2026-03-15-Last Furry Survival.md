@@ -2,7 +2,7 @@
 layout: post
 title: " Last Furry: Survival"
 subtitle: "HE HAS FINALLY BEEN RELEASED"
-date: 2026-03-15
+date: 2026-03-15T00:00:00Z
 release_date: "2026-03-15"
 category: Strategy
 badge: New

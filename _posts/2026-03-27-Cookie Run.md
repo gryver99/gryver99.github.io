@@ -2,7 +2,7 @@
 layout: post
 title: " Cookie Run OvenSmash"
 subtitle: "HE HAS FINALLY BEEN RELEASED"
-date: 2026-03-27
+date: 2026-03-27T00:00:00Z
 release_date: "2026-03-26"
 category: Brawler
 badge: New

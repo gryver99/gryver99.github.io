@@ -2,7 +2,7 @@
 layout: post
 title: "Mama Rescue: Bang Bang Bang"
 subtitle: "The High-Energy, K-Food Powered Roguelike Shooter"
-date: 2026-04-03
+date: 2026-04-03T00:00:00Z
 release_date: "2026-04-03"
 category: Roguelike Vertical Shooter
 badge: New

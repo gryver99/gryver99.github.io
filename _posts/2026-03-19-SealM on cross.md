@@ -2,7 +2,7 @@
 layout: post
 title: " SealM on CROSS"
 subtitle: "The Classic MMORPG Reimagined for the Cross-Platform Era"
-date: 2026-03-19
+date: 2026-03-19T00:00:00Z
 release_date: "2026-03-19"
 category: MMORPG
 badge: New

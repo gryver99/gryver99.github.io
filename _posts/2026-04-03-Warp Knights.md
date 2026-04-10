@@ -2,7 +2,7 @@
 layout: post
 title: "Warp Knights"
 subtitle: "The Evolution of Tower Offense Strategy RPG"
-date: 2026-04-03
+date: 2026-04-03T00:00:00Z
 release_date: "2026-04-03"
 category: Reverse Tower Defense
 badge: New

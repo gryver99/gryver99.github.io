@@ -2,7 +2,7 @@
 layout: post
 title: "Arcadium – Space Odyssey"
 subtitle: "The Ultimate Neon-Drenched Roguelite Challenge"
-date: 2026-03-21
+date: 2026-03-21T00:00:00Z
 release_date: "2026-03-21"
 category: Survival
 badge: New

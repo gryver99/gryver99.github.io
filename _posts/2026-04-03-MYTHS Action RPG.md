@@ -2,7 +2,7 @@
 layout: post
 title: "MYTHS Action RPG"
 subtitle: "Mythology-Driven Action RPG for Mobile"
-date: 2026-04-03
+date: 2026-04-03T00:00:00Z
 release_date: "2026-04-03"
 category: Action RPG
 badge: New

@@ -2,7 +2,7 @@
 layout: post
 title: "Dynasty Soul"
 subtitle: "A Dark Fantasy Reimagining of the Three Kingdoms Era"
-date: 2026-04-04
+date: 2026-04-04T00:00:00Z
 release_date: "2026-04-04"
 category:  Beat'em up
 badge: new

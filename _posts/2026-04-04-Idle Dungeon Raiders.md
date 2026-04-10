@@ -2,7 +2,7 @@
 layout: post
 title: "Idle Dungeon Raiders"
 subtitle: "The Ultimate AFK Adventure Enters Beta"
-date: 2026-04-04
+date: 2026-04-04T00:00:00Z
 release_date: "2026-04-04"
 category: Idle RPG
 badge: Beta

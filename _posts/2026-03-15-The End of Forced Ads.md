@@ -2,7 +2,7 @@
 layout: post
 title: " The End of Forced Ads?"
 subtitle: "How Modular Monetization is Redefining Mobile Gaming in 2026"
-date: 2026-03-15
+date: 2026-03-15T00:00:00Z
 release_date: "2026-03-15"
 category: news
 badge: news

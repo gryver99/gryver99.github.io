@@ -2,7 +2,7 @@
 layout: post
 title: "MY HERO ULTRA IMPACT"
 subtitle: "Shut Down Servers on May 18, 2026"
-date: 2026-03-19
+date: 2026-03-19T00:00:00Z
 release_date: "2026-03-19"
 category: Turn-Based RPG
 badge: Patch Notes

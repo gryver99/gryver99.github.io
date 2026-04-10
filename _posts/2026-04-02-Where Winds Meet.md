@@ -2,7 +2,7 @@
 layout: post
 title: "Where Winds Meet"
 subtitle: "Expands: Hexi Chapter 2 Now Live on Mobile"
-date: 2026-04-02
+date: 2026-04-02T00:00:00Z
 release_date: "2026-04-02"
 category: Open World
 badge: Patch Notes

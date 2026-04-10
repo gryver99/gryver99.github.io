@@ -2,7 +2,7 @@
 layout: post
 title: " Ratchet & Clank: Ranger Rumble"
 subtitle: "Everything We Know About the New Mobile Spin-Off "
-date: 2026-03-13
+date: 2026-03-13T00:00:00Z
 release_date: "2026-03-13"
 category: MOBA
 badge: New

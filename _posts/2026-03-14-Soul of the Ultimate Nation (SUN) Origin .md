@@ -2,7 +2,7 @@
 layout: post
 title: " Soul of the Ultimate Nation (SUN): Origin"
 subtitle: "The Resurrection of a Classic MMORPG on Mobile"
-date: 2026-03-14
+date: 2026-03-14T00:00:00Z
 release_date: "2026-03-14"
 category: MMORPG
 badge: New

@@ -2,7 +2,7 @@
 layout: post
 title: "Spacelancer MMORPG"
 subtitle: "A Vast Sandbox Galaxy in the Palm of Your Hand"
-date: 2026-04-06
+date: 2026-04-06T00:00:00Z
 release_date: "Beta"
 category: Space
 badge: Beta

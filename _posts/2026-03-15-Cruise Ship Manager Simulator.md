@@ -2,7 +2,7 @@
 layout: post
 title: " Cruise Ship Manager Simulator"
 subtitle: "Mobile Experience"
-date: 2026-03-15
+date: 2026-03-15T00:00:00Z
 release_date: "2026-03-15"
 category: Simulator
 badge: New

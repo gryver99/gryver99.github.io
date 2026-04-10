@@ -2,7 +2,7 @@
 layout: post
 title: " The Death of Pre-Launch"
 subtitle: "93% of AAA Studios Struggle to Predict Success, Turning to UGC for Survival "
-date: 2026-03-12
+date: 2026-03-12T00:00:00Z
 release_date: "2026-03-12"
 category: news
 badge: news

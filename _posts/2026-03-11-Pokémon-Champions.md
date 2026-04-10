@@ -2,7 +2,7 @@
 layout: post
 title: " Pokémon Champions"
 subtitle: "The New Frontier of Competitive Battling "
-date: 2026-03-11
+date: 2026-03-11T00:00:00Z
 release_date: "Coming Soon"
 category: RPG
 badge: Coming Soon

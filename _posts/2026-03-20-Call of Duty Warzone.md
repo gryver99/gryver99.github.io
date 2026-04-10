@@ -2,7 +2,7 @@
 layout: post
 title: "Call of Duty: Warzone"
 subtitle: "Activision Confirms Final Sunset for Call of Duty: Warzone Mobile in April 2026"
-date: 2026-03-20
+date: 2026-03-20T00:00:00Z
 release_date: "2026-03-20"
 category: Battle Royale
 badge: Patch Notes

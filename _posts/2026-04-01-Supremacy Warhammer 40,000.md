@@ -2,7 +2,7 @@
 layout: post
 title: "Supremacy: Warhammer 40,000"
 subtitle: "The Battle for Vigilus Begins"
-date: 2026-03-31
+date: 2026-03-31T00:00:00Z
 release_date: "2026-03-31"
 category: Strategy
 badge: New

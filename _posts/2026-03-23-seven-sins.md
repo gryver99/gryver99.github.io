@@ -2,7 +2,7 @@
 layout: post
 title: "Seven Deadly Sins: Origin"
 subtitle: "Gameplay Deep Dive: A New Standard for Anime Open-World RPGs"
-date: 2026-03-23
+date: 2026-03-23T00:00:00Z
 release_date: "23/03/26"
 category: Action RPG
 badge: New

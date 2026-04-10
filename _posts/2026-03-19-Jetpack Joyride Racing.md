@@ -2,7 +2,7 @@
 layout: post
 title: " Jetpack Joyride Racing"
 subtitle: "global Android it has officially been released"
-date: 2026-03-19
+date: 2026-03-19T00:00:00Z
 release_date: "2026-03-19"
 category: Race
 badge: New

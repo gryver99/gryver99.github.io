@@ -2,7 +2,7 @@
 layout: post
 title: "Phantom Edge: Oath"
 subtitle: "Unleash Your Blade in a World of Shadows and Honor"
-date: 2026-04-10
+date: 2026-04-10T00:00:00Z
 release_date: "April 2, 2026"
 category: MMORPG
 badge: "New"

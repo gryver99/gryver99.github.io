@@ -2,7 +2,7 @@
 layout: post
 title: " Pokémon GO"
 subtitle: "x Pokopia Collab is LIVE"
-date: 2026-03-13
+date: 2026-03-13T00:00:00Z
 release_date: "2026-03-13"
 category: Location-Based Game
 badge: Patch Notes

@@ -2,7 +2,7 @@
 layout: post
 title: " REDMAGIC 11 Series"
 subtitle: The Era of Liquid Cooling and Slim Power 
-date: 2026-03-12
+date: 2026-03-12T00:00:00Z
 release_date: "2026-03-12"
 category: news
 badge: news

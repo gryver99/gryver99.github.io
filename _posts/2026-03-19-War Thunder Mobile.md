@@ -2,7 +2,7 @@
 layout: post
 title: "War Thunder Mobile"
 subtitle: "Update 1.23: Tropic Raid officially launches Season 31"
-date: 2026-03-19
+date: 2026-03-19T00:00:00Z
 release_date: "2026-03-19"
 category: Vehicular Combat
 badge: Patch Notes

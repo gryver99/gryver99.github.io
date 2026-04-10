@@ -2,7 +2,7 @@
 layout: post
 title: "Mansi Hunter"
 subtitle: "A New Isometric Roguelike RPG Arrives on Mobile"
-date: 2026-03-28
+date: 2026-03-28T00:00:00Z
 release_date: "2026-03-28"
 category: Action RPG
 badge: New

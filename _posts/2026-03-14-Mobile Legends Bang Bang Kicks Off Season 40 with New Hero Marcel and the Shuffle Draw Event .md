@@ -2,7 +2,7 @@
 layout: post
 title: " Mobile Legends: Bang Bang"
 subtitle: "Season 40 with New Hero Marcel and the Shuffle Draw Event "
-date: 2026-03-14
+date: 2026-03-14T00:00:00Z
 release_date: "2026-03-14"
 category: MOBA
 badge: Patch Notes

@@ -2,7 +2,7 @@
 layout: post
 title: " PUBG Mobile"
 subtitle: "Version 4.3"
-date: 2026-03-11
+date: 2026-03-11T00:00:00Z
 release_date: "2026-03-10"
 category: Battle Royale
 badge: Patch Notes

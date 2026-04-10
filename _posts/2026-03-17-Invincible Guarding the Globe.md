@@ -2,7 +2,7 @@
 layout: post
 title: " Invincible: Guarding the Globe"
 subtitle: "Update 3.0 Is Live: Ragnar’s Claw and Chapter 20 Have Arrived"
-date: 2026-03-17
+date: 2026-03-17T00:00:00Z
 release_date: "2026-03-17"
 category: Squad-Based Idle RPG
 badge: Patch Notes

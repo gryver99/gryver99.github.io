@@ -2,7 +2,7 @@
 layout: post
 title: "Ace Force: Blitz"
 subtitle: "The Next Evolution of Mobile Aerial Combat"
-date: 2026-04-04
+date: 2026-04-04T00:00:00Z
 release_date: "2026-04-04"
 category: Dogfight
 badge: new

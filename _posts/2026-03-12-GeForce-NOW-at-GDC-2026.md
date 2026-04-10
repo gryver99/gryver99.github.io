@@ -2,7 +2,7 @@
 layout: post
 title: " GeForce NOW at GDC 2026"
 subtitle: "Cloud VR Hits 90 FPS on Mobile and Headsets "
-date: 2026-03-12
+date: 2026-03-12T00:00:00Z
 release_date: "2026-03-12"
 category: news
 badge: news

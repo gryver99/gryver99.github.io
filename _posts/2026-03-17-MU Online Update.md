@@ -2,7 +2,7 @@
 layout: post
 title: " MU Online"
 subtitle: "Meet the New Guardian Tauros and Upgraded EXP Mechanics"
-date: 2026-03-17
+date: 2026-03-17T00:00:00Z
 release_date: "2026-03-17"
 category: MMORPG
 badge: Patch Notes

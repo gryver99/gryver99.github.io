@@ -2,7 +2,7 @@
 layout: post
 title: " Survivor Legends"
 subtitle: "From Primitive Roots to Interstellar Mastery"
-date: 2026-03-21
+date: 2026-03-21T00:00:00Z
 release_date: "2026-03-21"
 category: Roguelite Survival 
 badge: New

@@ -2,7 +2,7 @@
 layout: post
 title: "FIFA Heroes: Football Action"
 subtitle: "Build Your Legend in the Ultimate Mobile Football Experience"
-date: 2026-04-10
+date: 2026-04-10T00:00:00Z
 release_date: "2026-04-28"
 category: Games
 badge: Beta

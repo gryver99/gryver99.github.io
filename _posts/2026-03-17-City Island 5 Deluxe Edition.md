@@ -2,7 +2,7 @@
 layout: post
 title: " City Island 5: Deluxe Edition"
 subtitle: "From Tiny Village to Global Empire!"
-date: 2026-03-17
+date: 2026-03-17T00:00:00Z
 release_date: "2026-03-16"
 category: City Builder
 badge: New

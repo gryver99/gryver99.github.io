@@ -2,7 +2,7 @@
 layout: post
 title: " Tomb Raider I-III Remastered"
 subtitle: "Just Dropped on Android, ios and switch"
-date: 2026-03-14
+date: 2026-03-14T00:00:00Z
 release_date: "2026-03-14"
 category: Action
 badge: New

@@ -2,7 +2,7 @@
 layout: post
 title: "Fantamon: Idle RPG"
 subtitle: "The Ultimate Global Squad Adventure is finaly on Mobile"
-date: 2026-03-20
+date: 2026-03-20T00:00:00Z
 release_date: "2026-03-12"
 category: Idle RPG
 badge: New

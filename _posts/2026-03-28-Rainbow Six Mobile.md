@@ -2,7 +2,7 @@
 layout: post
 title: "Rainbow Six Mobile"
 subtitle: "Ubisoft Deploys Critical Hotfix for Rainbow Six Mobile to Stabilize Matchmaking After Launch Surge"
-date: 2026-03-28
+date: 2026-03-28T00:00:00Z
 release_date: "2026-03-28"
 category: news
 badge: news

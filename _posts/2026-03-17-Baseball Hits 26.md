@@ -2,7 +2,7 @@
 layout: post
 title: " Baseball Hits 26 "
 subtitle: "Officially Launches on Mobile"
-date: 2026-03-17
+date: 2026-03-17T00:00:00Z
 release_date: "2026-03-17"
 category: Sports
 badge: New

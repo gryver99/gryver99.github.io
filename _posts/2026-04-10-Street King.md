@@ -2,7 +2,7 @@
 layout: post
 title: "Street King"
 subtitle: "Rule the Concrete Jungle in Ultimate Urban Brawls"
-date: 2026-04-10
+date: 2026-04-10T00:00:00Z
 release_date: "March 30, 2026"
 category: Games
 badge: "Beta"

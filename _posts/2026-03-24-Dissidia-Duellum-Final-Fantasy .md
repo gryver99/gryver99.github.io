@@ -2,7 +2,7 @@
 layout: post
 title: " Dissidia Duellum Final Fantasy"
 subtitle: "HE HAS FINALLY BEEN RELEASED"
-date: 2026-03-24
+date: 2026-03-24T00:00:00Z
 release_date: "2026-03-24"
 category: ACTION RPG
 badge: New

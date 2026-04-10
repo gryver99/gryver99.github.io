@@ -2,7 +2,7 @@
 layout: post
 title: "Cards and Castles Ultimate"
 subtitle: " A Tactical Fusion of Spells and Strategy"
-date: 2026-04-06
+date: 2026-04-06T00:00:00Z
 release_date: "2026-02-27"
 category: Collectible Card Game
 badge: new

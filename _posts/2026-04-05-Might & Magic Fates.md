@@ -2,7 +2,7 @@
 layout: post
 title: "Might & Magic: Fates"
 subtitle: "The Legendary RPG Franchise Returns"
-date: 2026-04-06
+date: 2026-04-06T00:00:00Z
 release_date: "2026-02-04"
 category: Strategy Card Game
 badge: new

@@ -2,7 +2,7 @@
 layout: post
 title: " Dragon Quest Smash/Grow"
 subtitle: "The Ultimate Roguelite Adventure Hits Mobile "
-date: 2026-03-11
+date: 2026-03-11T00:00:00Z
 release_date: "Coming Soon"
 category: RPG
 badge: Coming Soon

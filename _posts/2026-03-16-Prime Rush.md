@@ -2,7 +2,7 @@
 layout: post
 title: " Prime Rush"
 subtitle: "a new Mobile Battle Royale has arrived in Brazil"
-date: 2026-03-16
+date: 2026-03-16T00:00:00Z
 release_date: "2026-03-16"
 category: Battle Royale
 badge: New

@@ -2,7 +2,7 @@
 layout: post
 title: " Kuroko’s Basketball Street Rivals"
 subtitle: "3v3 real-time basketball game"
-date: 2026-03-12
+date: 2026-03-12T00:00:00Z
 release_date: "2026-03-11"
 category: Sports
 badge: New

@@ -2,7 +2,7 @@
 layout: post
 title: "Decentraland"
 subtitle: "Goes Multi-Platform: Android App and Epic Games Store Launch Now Live"
-date: 2026-04-02
+date: 2026-04-02T00:00:00Z
 release_date: "2026-04-02"
 category: Social
 badge: New

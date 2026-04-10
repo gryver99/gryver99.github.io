@@ -2,7 +2,7 @@
 layout: post
 title: "Retropolis: Rule The Streets"
 subtitle: "Rise from Hustler to Kingpin in the Ultimate Mobile Strategy War"
-date: 2026-03-22
+date: 2026-03-22T00:00:00Z
 release_date: "2026-03-22"
 category: Location-Based Game
 badge: New

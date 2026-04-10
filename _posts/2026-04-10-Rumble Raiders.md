@@ -2,7 +2,7 @@
 layout: post
 title: "Rumble Raiders"
 subtitle: "Command Your Squad in the Ultimate Aquatic Battle"
-date: 2026-04-10
+date: 2026-04-10T00:00:00Z
 release_date: "April 4, 2026"
 category: Action
 badge: "Beta"

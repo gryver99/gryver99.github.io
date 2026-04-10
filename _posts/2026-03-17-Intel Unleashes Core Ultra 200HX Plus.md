@@ -2,7 +2,7 @@
 layout: post
 title: " Intel Unleashes Core Ultra 200HX Plus"
 subtitle: "The Binary Optimization Tool is a Game-Changer for Mobile Performance "
-date: 2026-03-17
+date: 2026-03-17T00:00:00Z
 release_date: "2026-03-17"
 category: news
 badge: news

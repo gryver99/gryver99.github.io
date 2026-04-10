@@ -2,7 +2,7 @@
 layout: post
 title: " The Division Resurgence: Ubisoft Activates Final Pre-Launch Test"
 subtitle: Final Pre-Launch Test Ahead of March 31 Global Release
-date: 2026-03-12
+date: 2026-03-12T00:00:00Z
 release_date: "2026-03-12"
 category: news
 badge: news

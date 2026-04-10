@@ -2,7 +2,7 @@
 layout: post
 title: " Beyblade X Xone"
 subtitle: "HE HAS FINALLY BEEN RELEASED"
-date: 2026-03-14
+date: 2026-03-14T00:00:00Z
 release_date: "2026-03-14"
 category: Action
 badge: New

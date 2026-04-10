@@ -2,7 +2,7 @@
 layout: post
 title: "Fortnite"
 subtitle: "is Officially Back on the Google Play Store"
-date: 2026-03-19
+date: 2026-03-19T00:00:00Z
 release_date: "2026-03-19"
 category: news
 badge: news

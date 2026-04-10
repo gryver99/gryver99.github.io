@@ -2,7 +2,7 @@
 layout: post
 title: " The Division Resurgence"
 subtitle: "HE HAS FINALLY BEEN RELEASED"
-date: 2026-03-31
+date: 2026-03-31T00:00:00Z
 release_date: "2026-03-31"
 category: TPS
 badge: New

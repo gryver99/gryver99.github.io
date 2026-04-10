@@ -2,7 +2,7 @@
 layout: post
 title: "Keep the Crown: Tower Defense TD"
 subtitle: "Hold the Line Against the Swarm"
-date: 2026-04-03
+date: 2026-04-03T00:00:00Z
 release_date: "2026-04-03"
 category: Tower Defense
 badge: New

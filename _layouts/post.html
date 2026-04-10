@@ -150,6 +150,7 @@ layout: default
         </button>
         <span class="gp-copy-toast" id="gpCopyToast">Link copied!</span>
       </div>
+</article>
 
       {% if page.previous or page.next %}
       <nav class="gp-prevnext">
@@ -169,8 +170,6 @@ layout: default
       {% endif %}
 
       {% include related-posts.html max=4 %}
-
-    </article>
   </div>
 </div>
 
@@ -615,15 +614,22 @@ layout: default
 }
 
 @media (max-width: 860px) {
-  .gp-prevnext { grid-template-columns: 1fr; }
-  
+  .gp-layout {
+    display: flex;
+    flex-direction: column;
+  }
   .gp-sidebar {
     position: static;
     order: 2;
   }
-
   .gp-content {
     order: 1;
+  }
+  .gp-prevnext {
+    order: 3;
+  }
+  .gp-related {
+    order: 4;
   }
 }
 </style>

@@ -26,6 +26,8 @@ images:
   - https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/FIFA%20Heroes%202.webp
   - https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/FIFA%20Heroes%203.webp
 
+video_id: lEudpp6H6DE
+
 buttons:
   - label: "Play Store"
     url: "https://play.google.com/store/apps/details?id=com.solace.fifaheroes"

@@ -628,25 +628,6 @@ layout: default
 }
 </style>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "url": "{{ page.url | absolute_url }}",
-  "headline": "{{ page.title | escape }}",
-  "description": "{{ page.description | default: site.description | escape }}",
-  "image": "{{ page.hero_image | default: page.image | absolute_url }}",
-  "datePublished": "{{ page.release_date }}",
-  "author": {
-    "@type": "Organization",
-    "name": "{{ site.author.name }}"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "{{ site.title }}",
-    "url": "{{ site.url }}"
-  }
-}
 </script>
 
 <div class="gp-progress-bar" id="gpProgress"></div>

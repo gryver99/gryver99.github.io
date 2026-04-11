@@ -26,6 +26,8 @@ images:
   - https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/The%20Legend%20of%20Azure%203.webp
   - https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/The%20Legend%20of%20Azure%204.webp
 
+video_id: Tnu0h6tAIrE
+
 buttons:
   - label: "Play Store"
     url: "https://play.google.com/store/apps/details?id=com.fantasy.csgp"

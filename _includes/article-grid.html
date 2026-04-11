@@ -46,7 +46,7 @@
        data-cat="{{ post.category | default: '' | downcase }}"
        data-badge="{{ post.badge | default: '' | downcase }}"
        data-date="{{ post.date | date: '%s' }}"
-       data-release-date="{{ post.release_date | date: '%s' }}">
+       data-release-date="{{ post.release_date | default: '' }}">
       <div class="ag-card">
         <div class="ag-thumb">
           {% if post.category %}
@@ -170,8 +170,11 @@
 
   function getTimestamp(card) {
     if (sortBy === 'release') {
-      const rd = parseInt(card.dataset.releaseDate || '0', 10);
-      if (rd) return rd * 1000;
+      const rd = card.dataset.releaseDate || '';
+      if (rd) {
+        const t = new Date(rd).getTime();
+        if (!isNaN(t)) return t;
+      }
     }
     // Fallback to post date (Unix timestamp from Jekyll, seconds → ms)
     return parseInt(card.dataset.date || '0', 10) * 1000;

@@ -3,7 +3,7 @@ layout: post
 title: "Nekopara Sekai Connect"
 subtitle: "Everything You Need to Know About the New Gacha-Adventure"
 date: 2026-03-28T00:00:00Z
-release_date: "Coming Soon"
+release_date: "2099-12-31"
 category: Gacha RPG
 badge: Coming Soon
 tags:

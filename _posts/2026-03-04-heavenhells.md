@@ -3,7 +3,7 @@ layout: post
 title: "HEAVENHELLS"
 subtitle: "The fate of humanity rests in your hands."
 date: 2026-03-04T00:00:00Z
-release_date: "04/03/26"
+release_date: "2026/03/04"
 category: "RPG"
 badge: "NEW"
 tags:

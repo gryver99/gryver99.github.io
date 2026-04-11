@@ -3,7 +3,7 @@ layout: post
 title: " BLEACH: Mirrors High"
 subtitle: "globally in Summer 2026"
 date: 2026-03-12T00:00:00Z
-release_date: "Coming Soon"
+release_date: "2099-12-31"
 category: RPG
 badge: Coming Soon
 tags:

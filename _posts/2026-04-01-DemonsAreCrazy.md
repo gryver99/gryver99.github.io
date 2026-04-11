@@ -3,7 +3,7 @@ layout: post
 title: " DemonsAreCrazy"
 subtitle: "BETA in THAILAND"
 date: 2026-03-01T00:00:00Z
-release_date: "Beta"
+release_date: "2026-03-01"
 category: Action RPG
 badge: Beta
 tags: 

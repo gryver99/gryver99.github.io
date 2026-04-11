@@ -4,7 +4,7 @@ title: "Street King"
 subtitle: "Rule the Concrete Jungle in Ultimate Urban Brawls"
 date: 2026-04-10T00:00:00Z
 release_date: "March 30, 2026"
-category: Games
+category: Action
 badge: "Beta"
 tags:
  - Fighting

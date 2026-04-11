@@ -4,7 +4,7 @@ title: "Sea of Stars (Mobile Version)"
 subtitle: "The Award-Winning RPG Adventure Now in Your Pocket"
 date: 2026-04-10T00:00:00Z
 release_date: "April 7, 2026"
-category: Games
+category: Turn-based
 badge: "New"
 tags:
  - RPG

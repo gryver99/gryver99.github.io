@@ -202,6 +202,9 @@
 
   function renderPage(page) {
     currentPage = page;
+    const grid = document.getElementById('ag-grid');
+
+    // Hide all cards
     allCards.forEach(c => c.classList.remove('ag-visible'));
 
     const empty = document.getElementById('ag-empty');
@@ -211,6 +214,9 @@
       return;
     }
     empty.style.display = 'none';
+
+    // Reorder DOM nodes to match the sorted filtered array
+    filtered.forEach(c => grid.appendChild(c));
 
     const slice = filtered.slice((page-1)*PER_PAGE, page*PER_PAGE);
     slice.forEach((c, i) => {

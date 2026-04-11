@@ -1,4 +1,3 @@
-
 <section class="ag-section">
 
   <div class="ag-header">
@@ -6,12 +5,26 @@
       <span class="ag-section-tag">● Latest News</span>
       <h2 class="ag-title">News & Updates</h2>
     </div>
-    <div class="ag-search-wrap">
-      <svg class="ag-search-icon" viewBox="0 0 16 16" fill="none">
-        <circle cx="6.5" cy="6.5" r="4" stroke="currentColor" stroke-width="1.5"/>
-        <path d="M10 10l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-      <input type="text" id="ag-search" class="ag-search" placeholder="search news..." oninput="agSearch()">
+    <div class="ag-header-right">
+      <button class="ag-sort-btn" id="ag-sort-btn" onclick="agToggleSort()" title="Sort by date">
+        <svg viewBox="0 0 16 16" fill="none" width="14" height="14">
+          <path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span id="ag-sort-label">Newest</span>
+      </button>
+      <button class="ag-sort-btn" id="ag-sortby-btn" onclick="agToggleSortBy()" title="Change sort criteria">
+        <svg viewBox="0 0 16 16" fill="none" width="14" height="14">
+          <path d="M3 3h10M3 8h6M3 13h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span id="ag-sortby-label">Post</span>
+      </button>
+      <div class="ag-search-wrap">
+        <svg class="ag-search-icon" viewBox="0 0 16 16" fill="none">
+          <circle cx="6.5" cy="6.5" r="4" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M10 10l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <input type="text" id="ag-search" class="ag-search" placeholder="search news..." oninput="agSearch()">
+      </div>
     </div>
   </div>
 
@@ -31,7 +44,9 @@
        href="{{ post.url | relative_url }}"
        data-title="{{ post.title | downcase }}"
        data-cat="{{ post.category | default: '' | downcase }}"
-       data-badge="{{ post.badge | default: '' | downcase }}">
+       data-badge="{{ post.badge | default: '' | downcase }}"
+       data-date="{{ post.date | date: '%s' }}"
+       data-release-date="{{ post.release_date | default: '' }}">
       <div class="ag-card">
         <div class="ag-thumb">
           {% if post.category %}
@@ -63,28 +78,83 @@
 
 </section>
 
+<style>
+.ag-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ag-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ag-sort-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid var(--border, #ddd);
+  border-radius: 20px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: inherit;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.ag-sort-btn:hover {
+  background: var(--hover-bg, rgba(0,0,0,0.05));
+  border-color: var(--border-hover, #aaa);
+}
+
+.ag-sort-btn svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+</style>
+
 <script>
 (function(){
   const PER_PAGE = 12;
   let allCards = [], filtered = [], currentPage = 1, activeFilter = 'all', timer = null;
+  let sortOrder = 'desc';   // 'desc' = più recenti prima, 'asc' = più vecchi prima
+  let sortBy    = 'post';   // 'post' = data post, 'release' = release_date
 
   function init() {
     allCards = Array.from(document.querySelectorAll('#ag-grid .ag-card-link'));
-    // ✅ Corretto — gestisce anche immagini già in cache
-allCards.forEach(c => {
-  const img = c.querySelector('img');
-  if (!img) return;
-  function reveal() { img.classList.add('ag-loaded'); }
-  if (img.complete) {
-    reveal();
-  } else {
-    img.addEventListener('load', reveal);
-    img.addEventListener('error', reveal);
-  }
-});
+    allCards.forEach(c => {
+      const img = c.querySelector('img');
+      if (!img) return;
+      function reveal() { img.classList.add('ag-loaded'); }
+      if (img.complete) { reveal(); }
+      else { img.addEventListener('load', reveal); img.addEventListener('error', reveal); }
+    });
     filtered = [...allCards];
-    renderPage(1);
+    applyFilter();
   }
+
+  // Alterna direzione: più recenti / più vecchi
+  window.agToggleSort = function() {
+    sortOrder = sortOrder === 'desc' ? 'asc' : 'desc';
+    document.getElementById('ag-sort-label').textContent =
+      sortOrder === 'desc' ? 'Newest' : 'Oldest';
+    applyFilter();
+  };
+
+  // Alterna criterio: data post / data di rilascio
+  window.agToggleSortBy = function() {
+    sortBy = sortBy === 'post' ? 'release' : 'post';
+    document.getElementById('ag-sortby-label').textContent =
+      sortBy === 'post' ? 'Post' : 'Release';
+    applyFilter();
+  };
 
   window.agFilter = function(f, btn) {
     activeFilter = f;
@@ -98,6 +168,15 @@ allCards.forEach(c => {
     timer = setTimeout(applyFilter, 200);
   };
 
+  function getTimestamp(card) {
+    if (sortBy === 'release') {
+      const rd = card.dataset.releaseDate || '';
+      if (rd) return new Date(rd).getTime();
+    }
+    // Fallback su data del post (timestamp Unix da Jekyll, in secondi → ms)
+    return parseInt(card.dataset.date || '0', 10) * 1000;
+  }
+
   function applyFilter() {
     const q = (document.getElementById('ag-search')?.value || '').toLowerCase().trim();
     filtered = allCards.filter(c => {
@@ -108,6 +187,13 @@ allCards.forEach(c => {
       const matchSearch = !q || title.includes(q) || cat.includes(q) || badge.includes(q);
       return matchFilter && matchSearch;
     });
+
+    filtered.sort((a, b) => {
+      const da = getTimestamp(a);
+      const db = getTimestamp(b);
+      return sortOrder === 'desc' ? db - da : da - db;
+    });
+
     renderPage(1);
   }
 

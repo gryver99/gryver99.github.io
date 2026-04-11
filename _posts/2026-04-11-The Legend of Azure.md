@@ -10,12 +10,13 @@ tags:
  - MMORPG
  - RPG
  - Monster Collector
+ - Autoplay
 image: https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/The%20Legend%20of%20Azure%201.webp
 description: "Discover The Legend of Azure, a newly released MMORPG for Android and iOS. Learn about its deep creature taming, robust guild system, and epic boss raids."
 hero_image: https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/The%20Legend%20of%20Azure%201.webp
 
 info:
-  genre: MMORPG / Monster Collector
+  genre: MMORPG / Autoplay
   platform: Android
   developer: tagertilt
   mode: Multiplayer

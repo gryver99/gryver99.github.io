@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Legend of Azure: A New Epic Mobile MMORPG Arrives"
+title: "The Legend of Azure"
 subtitle: "Explore the vast world of Pamons, tame magical creatures, and conquer massive raid bosses in this new mobile adventure."
 date: 2026-04-11T15:00:00Z
 release_date: "2026-04-07"

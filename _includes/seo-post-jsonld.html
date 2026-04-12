@@ -1,0 +1,42 @@
+{% if page.layout == 'post' %}
+{% assign seo_desc = page.description | default: page.excerpt | strip_html | truncate: 320 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": {{ site.url | append: "/" | jsonify }}
+        }{% if page.category %},
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ page.category | jsonify }},
+          "item": {{ "/categories/" | absolute_url | jsonify }}
+        }{% endif %},
+        {
+          "@type": "ListItem",
+          "position": {% if page.category %}3{% else %}2{% endif %},
+          "name": {{ page.title | jsonify }},
+          "item": {{ page.url | absolute_url | jsonify }}
+        }
+      ]
+    }{% if page.video_id %},
+    {
+      "@type": "VideoObject",
+      "name": {{ page.title | jsonify }},
+      "description": {{ seo_desc | jsonify }},
+      "thumbnailUrl": "https://i.ytimg.com/vi/{{ page.video_id }}/hqdefault.jpg",
+      "uploadDate": "{{ page.date | date_to_xmlschema }}",
+      "contentUrl": "https://www.youtube.com/watch?v={{ page.video_id }}",
+      "embedUrl": "https://www.youtube.com/embed/{{ page.video_id }}"
+    }{% endif %}
+  ]
+}
+</script>
+{% endif %}

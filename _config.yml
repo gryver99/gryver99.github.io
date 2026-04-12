@@ -2,10 +2,21 @@ title: GameLeaf
 description: Your portal for indie and mobile games
 url: "https://www.gameleaf.space"
 baseurl: ""
+lang: en
+
+logo: /assets/images/logo.webp
 
 author:
   name: Gryvery
   url: "https://www.gameleaf.space/about"
+
+twitter:
+  card: summary_large_image
+
+social:
+  name: GameLeaf
+  links:
+    - https://www.youtube.com/channel/UCo_22HGU2y0F06am8OjeXwg
 
 youtube_channel_id: UCo_22HGU2y0F06am8OjeXwg
 
@@ -30,3 +41,7 @@ defaults:
       path: ""
     values:
       image: /assets/images/hero-bg.jpg
+  - scope:
+      type: posts
+    values:
+      author: Gryvery

@@ -24,7 +24,7 @@ info:
   developer: GOMU STUDIO
 
 images:
-  - - "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/OPG3D%20Pirate%20Valor%202.webp"
+  - "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/OPG3D%20Pirate%20Valor%202.webp"
   - "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/OPG3D%20Pirate%20Valor%203.webp"
   - "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/OPG3D%20Pirate%20Valor%201.webp"
 
@@ -49,20 +49,19 @@ To celebrate the global launch of **OPG3D: Pirate Valor**, GOMU STUDIO has relea
 ### ✅ Active Codes (April 2026)
 Here are the currently working codes. Make sure to type them exactly as they appear (the system is case-sensitive).
 
-| Code | Rewards | Status |
-| :--- | :--- | :--- |
-| **VIP666** | 15 Advanced Bounty Quests, 50 Standard Bounty Quests, 20 Talent Scrolls | **Active** |
-| **VIP888** | 20 Recruiting Tickets gold, 60 Recruiting Tickets, 10 Golden Keys, 10 Silver Keys | **Active** |
-| **VIP999** | 15 EXP Scrolls, 15 Skill Scrolls, 50 adv. Hero Shards, 50 Hero Shards | **Active** |
-| **GROUP666** | 200 Diamonds, 200k Beli, 10 Recruiting Tickets, 2 Bounty Quest Scrolls | **Active** |
-| **LIKEOPG3D** | 200 Diamonds, 200k Beli, 10 Recruiting Tickets, 2 Bounty Quest Scrolls | **Active** |
+| Code | Rewards |
+| :--- | :--- |
+| **VIP666** | 15 Advanced Bounty Quests, 50 Standard Bounty Quests, 20 Talent Scrolls |
+| **VIP888** | 20 Recruiting Tickets gold, 60 Recruiting Tickets, 10 Golden Keys, 10 Silver Keys |
+| **VIP999** | 15 EXP Scrolls, 15 Skill Scrolls, 50 adv. Hero Shards, 50 Hero Shards |
+| **GROUP666** | 200 Diamonds, 200k Beli, 10 Recruiting Tickets, 2 Bounty Quest Scrolls |
+| **LIKEOPG3D** | 200 Diamonds, 200k Beli, 10 Recruiting Tickets, 2 Bounty Quest Scrolls |
 
 ---
 
 ### ❌ Expired Codes
 The following codes are no longer valid. Don't waste your time trying them!
-* **
-* **
+*No expired codes yet. Check back soon!*
 
 ---
 

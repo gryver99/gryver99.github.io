@@ -263,16 +263,11 @@
 /* ───────────── CARD LINK (wrapper) ───────────── */
 .ag-card-link {
   text-decoration: none;
-  display: block;
-  opacity: 0;
-  transform: translateY(14px);
-  pointer-events: none;
-  transition: none;
+  display: none;   /* nascosto di default → non occupa spazio nel grid */
 }
 
 .ag-card-link.ag-visible {
-  opacity: 1;
-  transform: translateY(0);
+  display: block;
   pointer-events: auto;
   animation: agFadeUp 0.4s ease both;
 }
@@ -331,8 +326,8 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    transparent 50%,
-    rgba(10,20,12,0.75) 100%
+    transparent 65%,
+    rgba(10,20,12,0.55) 100%
   );
   pointer-events: none;
 }

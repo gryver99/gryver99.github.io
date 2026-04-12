@@ -76,6 +76,9 @@ Game Leaf uses cookies to enhance navigation and personalize the user experience
 **Google DART Cookie**  
 Google may use DART cookies to serve ads based on users' previous visits to this and other sites. You can opt out of the use of DART cookies by visiting Google’s ad settings page.
 
+**Google Analytics (GA4)**  
+We use Google Analytics to understand aggregate site usage (for example, which pages are viewed and general traffic patterns). Google may use cookies or similar technologies to collect this information. You can learn more in [Google’s Privacy Policy](https://policies.google.com/privacy) and use your browser settings or available opt-out tools to limit analytics cookies where applicable.
+
 ---
 
 ## 6. Advertising Partners

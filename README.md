@@ -4,7 +4,7 @@ Jekyll static site for GameLeaf news, posts, featured videos, and search.
 
 ## Tech Stack
 
-- Jekyll `4.4.x`
+- Jekyll (version pinned by the `github-pages` gem; see `Gemfile.lock`)
 - Liquid templates + Markdown posts
 - Vanilla JavaScript
 - SCSS/CSS
@@ -61,11 +61,15 @@ Generated output goes to `_site/`.
 
 - CI workflow (`.github/workflows/ci.yml`) runs:
   - `bundle exec jekyll build`
-  - Broken-link scan on generated `_site/` HTML
+  - `html-proofer` (installed in CI via `gem install html-proofer -N`) on `_site/` with **internal** checks only (`--disable-external`) so third-party CDNs and outbound links do not fail the build. To run the same check locally: `bundle exec jekyll build`, then `gem install html-proofer -N`, then `htmlproofer _site --disable-external=true --allow-hash-href=true --ignore-empty-alt=true --assume-extension=.html`.
 
 ## Notes
 
+- Post images are often loaded from external CDNs (for example Supabase or image hosts). If a host is unreachable, thumbnails may not appear; the site falls back to `/assets/images/placeholder.jpg` when no `image` is set in front matter.
 - Search input validation is centralized in `assets/js/site-utils.js`.
 - Video carousel assets are split into:
   - `assets/css/video-carousel.css`
   - `assets/js/video-carousel.js`
+- Homepage article grid assets:
+  - `assets/css/article-grid.css`
+  - `assets/js/article-grid.js`

@@ -13,6 +13,9 @@
   {% if page.has_video_carousel %}
     <link rel="stylesheet" href="{{ '/assets/css/video-carousel.css' | relative_url }}">
   {% endif %}
+  {% if page.has_article_grid %}
+    <link rel="stylesheet" href="{{ '/assets/css/article-grid.css' | relative_url }}">
+  {% endif %}
   {% if page.url == '/' %}
     <link rel="preload" as="image" href="{{ '/assets/images/hero-dragon.webp' | relative_url }}">
   {% endif %}
@@ -51,6 +54,9 @@
   {% endif %}
   {% if page.has_video_carousel %}
     <script src="{{ '/assets/js/video-carousel.js' | relative_url }}" defer></script>
+  {% endif %}
+  {% if page.has_article_grid %}
+    <script src="{{ '/assets/js/article-grid.js' | relative_url }}" defer></script>
   {% endif %}
 
   <button id="backToTop" aria-label="Back to top">↑</button>

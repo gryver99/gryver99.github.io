@@ -24,3 +24,8 @@ jobs:
 
       - name: Build Jekyll site
         run: bundle exec jekyll build
+
+      - name: Check internal HTML (html-proofer)
+        run: |
+          gem install html-proofer -N
+          htmlproofer _site --disable-external=true --allow-hash-href=true --ignore-empty-alt=true --assume-extension=.html

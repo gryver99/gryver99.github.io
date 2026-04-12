@@ -7,7 +7,9 @@ release_date: "2026-03-10"
 category: Battle Royale
 badge: Patch Notes
 tags:
- - Version Update
+ - PUBG Mobile
+ - Version Upgrade
+ - Patch Notes
 image: https://i.ibb.co/5p5hxnt/R.jpg
 description: "PUBG Mobile is officially turning eight, and the Version 4.3 Update is set to be its most ambitious milestone yet. Dubbed Evolving Universe, this anniversary expansion moves beyond simple cosmetics, introducing deep RPG-like progression mechanics and a complete overhaul of iconic Erangel locations."
 

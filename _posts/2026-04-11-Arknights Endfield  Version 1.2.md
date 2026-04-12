@@ -20,13 +20,13 @@ info:
   genre: 3D Real-time Combat RPG / Strategic Sandbox
   platform: PC / Android / iOS / PS5
   developer: Gryphline (Hypergryph)
-  mode: Single-player / Multiplayer
+  mode: Multiplayer
 
 
 buttons:
-  - label: "Official Patch Notes"
-    url: "https://endfield.arknights.global/news/1-2-patch-notes"
-    type: info
+  - label: "Play Store"
+    url: "hhttps://play.google.com/store/apps/details?id=com.gryphline.endfield.gp"
+    type: playstore
 ---
 
 ## Arknights: Endfield – Version 1.2 "At the Wake of Spring" Comprehensive Overview

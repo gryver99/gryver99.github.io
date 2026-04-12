@@ -61,7 +61,7 @@ Generated output goes to `_site/`.
 
 - CI workflow (`.github/workflows/ci.yml`) runs:
   - `bundle exec jekyll build`
-  - `html-proofer` (installed in CI via `gem install html-proofer -N`) on `_site/` with **internal** checks only (`--disable-external`) so third-party CDNs and outbound links do not fail the build. To run the same check locally: `bundle exec jekyll build`, then `gem install html-proofer -N`, then `htmlproofer _site --disable-external=true --allow-hash-href=true --ignore-empty-alt=true --assume-extension=.html`.
+  - `html-proofer` (installed in CI via `gem install html-proofer -N`) on `_site/` with **internal** checks only (`--disable-external`) so third-party CDNs and outbound links do not fail the build. To run the same check locally: `bundle exec jekyll build`, then `gem install html-proofer -N`, then `htmlproofer _site --disable-external --assume-extension .html --no-enforce-https --no-check-internal-hash --ignore-missing-alt`.
 
 ## Notes
 

@@ -11,7 +11,7 @@ tags:
  - Reboot
  - Gacha
  - RPG
-image: "pahttps://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/goddess%20planet%201.webp"
+image: "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/goddess%20planet%201.webp"
 description: "The classic Goddess Planet returns in 2026 with a complete technical reboot. Discover the new real-time combat system and ultra-HD character customization."
 
 hero_image: "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/goddess%20planet%201.webp"

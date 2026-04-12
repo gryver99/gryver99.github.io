@@ -300,18 +300,15 @@
 /* ───────────── THUMBNAIL ───────────── */
 .ag-thumb {
   position: relative;
+  padding-bottom: 56.25%; /* hack 16:9 affidabile — aspect-ratio non funziona bene dentro flex */
+  height: 0;
   overflow: hidden;
-  aspect-ratio: 16/9;
   background: #0c140e;
-  /* Evita gap fantasma sotto l'img (inline baseline bug) */
-  font-size: 0;
-  line-height: 0;
 }
 
 .ag-thumb img {
-  /* Copre il 100% assoluto del contenitore senza lasciare gap */
   position: absolute;
-  inset: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -327,15 +324,9 @@
 }
 
 /* Fade gradient bottom */
+/* Gradiente rimosso — era la causa della linea visibile */
 .ag-thumb-fade {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 65%,
-    rgba(10,20,12,0.55) 100%
-  );
-  pointer-events: none;
+  display: none;
 }
 
 /* ───────────── HOVER OVERLAY ───────────── */
@@ -380,18 +371,16 @@
 /* ───────────── BADGES ───────────── */
 .ag-cat {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  background: rgba(0,0,0,0.65);
-  color: var(--ag-text-primary);
-  font-size: 0.68rem;
+  top: 8px;
+  left: 8px;
+  background: rgba(0,0,0,0.72);
+  color: #fff;
+  font-size: 0.65rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 6px;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255,255,255,0.1);
+  padding: 2px 7px;
+  border-radius: 4px;
 }
 
 .ag-badge {

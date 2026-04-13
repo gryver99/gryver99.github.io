@@ -28,6 +28,8 @@ images:
   - "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/OPG3D%20Pirate%20Valor%203.webp"
   - "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/OPG3D%20Pirate%20Valor%204.webp"
 
+video_id: HOQBlP1HHuA
+
 buttons:
   - label: "Official Website"
     url: "https://opg3d.com/"

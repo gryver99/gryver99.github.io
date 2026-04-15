@@ -43,14 +43,14 @@ To celebrate the global launch of MONGIL: STAR DIVE, Netmarble has released seve
 ### ✅ Active Codes (April 2026)
 Here are the currently working codes. Make sure to type them exactly as they appear (the system is case-sensitive).
 
-| Code                        | Rewards |
-| :---------------------------| :--- |
-| **MONGILDISCORD**           | 30 Diamonds, 30 Glimmering Stardust, 300,000 Gold |
-| **LOVEMONGIL**              | Overflowing Love (4-Star Supporter Artifact) |
-| **DEVLIVE0410**             | Scar, White Wolf Warrior, and Spark Slime (Monsterlings) |
-| **MONGILPRESENT**           | Brown Cappy, Spark Slime, and Forkmugger (Monsterlings) |
-| **DINDINISDINDIN**          | Green Cappy (Monsterling) and 10,000 Gold |
-| **MONGILREPORT**            | White Wolf Warrior (Monsterling) |
+| Code &nbsp; &nbsp; &nbsp; &nbsp;| Rewards |
+| :-------------------------------| :--- |
+| **MONGILDISCORD**               | 30 Diamonds, 30 Glimmering Stardust, 300,000 Gold |
+| **LOVEMONGIL**                  | Overflowing Love (4-Star Supporter Artifact) |
+| **DEVLIVE0410**                 | Scar, White Wolf Warrior, and Spark Slime (Monsterlings) |
+| **MONGILPRESENT**               | Brown Cappy, Spark Slime, and Forkmugger (Monsterlings) |
+| **DINDINISDINDIN**              | Green Cappy (Monsterling) and 10,000 Gold |
+| **MONGILREPORT**                | White Wolf Warrior (Monsterling) |
 
 ---
 

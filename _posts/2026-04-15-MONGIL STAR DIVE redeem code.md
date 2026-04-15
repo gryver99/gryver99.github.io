@@ -26,7 +26,7 @@ images:
   - https://i.ibb.co/xSRJMH2f/unnamed-13.jpg
   - https://i.ibb.co/rfvcBG6w/unnamed-14.jpg
 
-video_id: ljqEsz1ijqI
+video_id: IMAIWO9EaE0
 
 buttons:
   - label: "Play Store"
@@ -44,7 +44,7 @@ To celebrate the global launch of MONGIL: STAR DIVE, Netmarble has released seve
 Here are the currently working codes. Make sure to type them exactly as they appear (the system is case-sensitive).
 
 | Code                  | Rewards |
-| :---                  | :--- |
+| :---------------------| :--- |
 | **MONGILDISCORD**     | 30 Diamonds, 30 Glimmering Stardust, 300,000 Gold |
 | **LOVEMONGIL**        | Overflowing Love (4-Star Supporter Artifact) |
 | **DEVLIVE0410**       | Scar, White Wolf Warrior, and Spark Slime (Monsterlings) |

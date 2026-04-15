@@ -25,6 +25,13 @@ images:
   - https://i.ibb.co/xSRJMH2f/unnamed-13.jpg
   - https://i.ibb.co/rfvcBG6w/unnamed-14.jpg
 
+video_id: ljqEsz1ijqI
+
+buttons:
+  - label: "Play Store"
+    url: "https://play.google.com/store/apps/details?id=com.netmarble.monster2"
+    type: playstore
+
 ---
 
 The wait is almost over. MONGIL: STAR DIVE, the highly anticipated action RPG developed by Netmarble Monster Inc., is officially right around the corner. Set for a global launch on April 15, 2026 (with US servers opening on April 14), this vibrant title promises to revive Netmarble's classic monster-taming legacy. Blending fast-paced hack-and-slash combat, deep gacha mechanics, and a charming creature-collection system, MONGIL: STAR DIVE is gearing up to be one of the biggest multi-platform releases of the spring season. 

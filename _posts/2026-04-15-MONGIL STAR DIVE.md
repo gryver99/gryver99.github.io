@@ -9,6 +9,7 @@ badge: new
 tags:
  - Action RPG
  - Gacha
+ - Netmarble
 image: https://i.ibb.co/23DfJ6H7/mongil-star-dive-ios-android-cbt-cover.jpg
 description: "MONGIL: STAR DIVE, the highly anticipated action RPG developed by Netmarble Monster Inc., is officially right around the corner. Set for a global launch on April 15, 2026 (with US servers opening on April 14), this vibrant title promises to revive Netmarble's classic monster-taming legacy. Blending fast-paced hack-and-slash combat, deep gacha mechanics, and a charming creature-collection system, MONGIL: STAR DIVE is gearing up to be one of the biggest multi-platform releases of the spring season."
 

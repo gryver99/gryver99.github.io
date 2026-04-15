@@ -2,10 +2,10 @@
 layout: post
 title: "MONGIL: STAR DIVE"
 subtitle: "The Next Generation of Monster-Taming Action RPGs"
-date: 2026-04-03T00:00:00Z
+date: 2026-04-15T00:00:00Z
 release_date: "2026-04-15"
 category: Action RPG
-badge: Coming Soon
+badge: new
 tags:
  - Action RPG
  - Gacha

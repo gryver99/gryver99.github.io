@@ -49,13 +49,13 @@ To celebrate the global launch of **OPG3D: Pirate Valor**, GOMU STUDIO has relea
 ### ✅ Active Codes (April 2026)
 Here are the currently working codes. Make sure to type them exactly as they appear (the system is case-sensitive).
 
-| Code           | Rewards |
-| :---           | :--- |
-| **VIP666**     | 15 Advanced Bounty Quests, 50 Standard Bounty Quests, 20 Talent Scrolls |
-| **VIP888**     | 20 Recruiting Tickets gold, 60 Recruiting Tickets, 10 Golden Keys, 10 Silver Keys |
-| **VIP999**     | 15 EXP Scrolls, 15 Skill Scrolls, 50 adv. Hero Shards, 50 Hero Shards |
-| **GROUP666**   | 200 Diamonds, 200k Beli, 10 Recruiting Tickets, 2 Bounty Quest Scrolls |
-| **LIKEOPG3D**  | 200 Diamonds, 200k Beli, 10 Recruiting Tickets, 2 Bounty Quest Scrolls |
+| Code  &nbsp;&nbsp&nbsp;| Rewards |
+| :----------------------| :--- |
+| **VIP666** &nbsp;&nbsp;| 15 Advanced Bounty Quests, 50 Standard Bounty Quests, 20 Talent Scrolls |
+| **VIP888**             | 20 Recruiting Tickets gold, 60 Recruiting Tickets, 10 Golden Keys, 10 Silver Keys |
+| **VIP999**             | 15 EXP Scrolls, 15 Skill Scrolls, 50 adv. Hero Shards, 50 Hero Shards |
+| **GROUP666**           | 200 Diamonds, 200k Beli, 10 Recruiting Tickets, 2 Bounty Quest Scrolls |
+| **LIKEOPG3D**          | 200 Diamonds, 200k Beli, 10 Recruiting Tickets, 2 Bounty Quest Scrolls |
 
 ---
 

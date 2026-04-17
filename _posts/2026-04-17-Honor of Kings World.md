@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Honor of Kings: World"
-subtitle: "A massive open-world RPG expansion of the HoK universe"
+subtitle: "The massive open-world RPG officially launches in China"
 date: 2026-04-17T00:00:00Z
 
 release_date: "2026-04-17 (China)"
@@ -12,7 +12,7 @@ tags:
  - Action RPG
  - Fantasy
 image: https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/Honor%20of%20Kings:%20World%202.webp
-description: "Experience the vibrant world of Honor of Kings like never before in this ambitious open-world action RPG."
+description: "Honor of Kings: World has officially launched in China, bringing the legendary MOBA universe into a high-fidelity open-world adventure."
 
 hero_image: https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/Honor%20of%20Kings:%20World%202.webp
 

@@ -509,6 +509,11 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 768px) {
   .hero {
+    /* Senza il drago laterale, 460px lascia troppo vuoto su schermi stretti */
+    height: auto;
+    min-height: 0;
+    padding: 28px 16px 36px;
+
     &__dragon { display: none; }
     &__logo { width: min(300px, 85vw); }
 
@@ -551,11 +556,29 @@ main {
   height: 44px;
   font-size: 1.2rem;
   cursor: pointer;
+  z-index: 900;
 }
 
 #backToTop.is-visible {
   opacity: 1;
   pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  #backToTop {
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    right: calc(1rem + env(safe-area-inset-right, 0px));
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  }
+
+  /* Spazio sotto le card così il FAB non copre titoli/snippet in fondo alla lista */
+  .ag-section {
+    padding-top: 32px;
+    padding-bottom: 96px;
+  }
 }
 
 .ag-section {

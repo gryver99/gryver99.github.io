@@ -6,7 +6,7 @@ date: 2026-04-18T00:00:00Z
 
 release_date: "2026-03-25"
 category: Dating Sim
-badge: "news"
+badge: "new"
 tags:
  - Romance
  - intiny

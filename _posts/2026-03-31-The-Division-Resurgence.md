@@ -10,7 +10,7 @@ tags:
  - Open World
  - TPS
  - PVP
- - PVE
+ - Ubisoft
 image: https://i.ibb.co/nsQCfshX/the-division-resurgence.jpg
 description: "the gameplay focuses on cover-based shooting, deep loot systems, and squad-based tactics in a massive open-world New York City."
 

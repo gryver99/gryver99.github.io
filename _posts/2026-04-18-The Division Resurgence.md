@@ -5,21 +5,28 @@ subtitle: "Ubisoft Fixes Thermal Throttling and Frame Drops for 2026 Devices"
 date: 2026-04-18T14:00:00Z
 
 release_date: "2026-04-17"
-category: News
-badge: "news"
+category: TPS
+badge: "Patch Notes"
 tags:
  - Ubisoft
- - Third-Person Shooter
  - Patch Notes
-image: https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/game-news.webp
+image: https://i.ibb.co/nsQCfshX/the-division-resurgence.jpg
 description: "Ubisoft releases a major stability patch for The Division Resurgence, addressing overheating and FPS stability on the latest 2025/2026 flagship smartphones."
 
-hero_image: https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/game-news.webp
+hero_image: https://i.ibb.co/nsQCfshX/the-division-resurgence.jpg
+
 info:
-  genre: Tactical Cover-Based Shooter
-  platform: Android / iOS
-  developer: Ubisoft Mobile
-  mode: Multiplayer (PvP & Co-op)
+  genre: Open World / TPS
+  platform: Android / IOS
+  developer: Ubisoft
+  mode: Multiplayer
+
+images:
+  - https://i.ibb.co/Y7FXFZGv/maxresdefault-1.jpg
+  - https://i.ibb.co/pBF5xtQR/R-1.jpg
+  - https://i.ibb.co/FbHxXkkC/xp-T563-Sx6xuu-ES7bm-Ns5rb.jpg
+
+video_id: ddeTQ-LEd20
 
 buttons:
   - label: "Play Store"

@@ -31,7 +31,7 @@ buttons:
   - label: "Official Site"
     url: "https://honorofkingsworld.com/en/"
     type: website
- -  label: "TapTap (CN)"
+  - label: "TapTap (CN)"
     url: "https://www.taptap.cn/app/744415?os=android"
     type: taptap
 ---

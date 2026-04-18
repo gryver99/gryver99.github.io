@@ -2,7 +2,7 @@
 layout: post
 title: "Google Play Store: New Device-Specific Review System"
 subtitle: "Tailored Ratings: Play Store UI Now Prioritizes Reviews from Your Smartphone Model"
-date: 2026-04-18T16:45:00Z
+date: 2026-04-18T00:00:00Z
 
 release_date: "2026-04-16"
 category: News

@@ -2,7 +2,7 @@
 layout: post
 title: "The Division Resurgence: Massive Performance Update"
 subtitle: "Ubisoft Fixes Thermal Throttling and Frame Drops for 2026 Devices"
-date: 2026-04-18T14:00:00Z
+date: 2026-04-18T00:00:00Z
 
 release_date: "2026-04-17"
 category: TPS

@@ -74,7 +74,9 @@
 .gl-arrow--right{margin-left:10px}
 .gl-carousel{display:flex;gap:14px;flex:1;align-items:stretch;min-width:0}
 .gl-slot{flex:1;display:flex;flex-direction:column;transition:transform .28s cubic-bezier(.34,1.56,.64,1);min-width:0}
-.gl-slot:hover{transform:translateY(-5px)}
+@media (hover:hover){
+  .gl-slot:hover{transform:translateY(-5px)}
+}
 .gl-thumb{
   position:relative;width:100%;aspect-ratio:16/9;display:block;
   border-radius:12px;overflow:hidden;
@@ -142,7 +144,9 @@
   text-decoration:none;opacity:0;transform:translateX(4px);
   transition:opacity .18s,transform .18s,color .18s;
 }
-.gl-slot:hover .gl-watch-link{opacity:1;transform:translateX(0);color:var(--gl-neon)}
+@media (hover:hover){
+  .gl-slot:hover .gl-watch-link{opacity:1;transform:translateX(0);color:var(--gl-neon)}
+}
 .gl-vc-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;padding-top:12px;border-top:1px solid rgba(57,255,140,.07);position:relative;z-index:2}
 .gl-vc-note{font-family:var(--gl-fu);font-size:12px;font-weight:500;color:var(--gl-muted);letter-spacing:.3px;display:flex;align-items:center;gap:8px}
 .gl-pager{display:flex;gap:7px;align-items:center}
@@ -158,14 +162,23 @@
 @media(max-width:650px){
   .gl-vc-wrap{margin:20px auto 14px}
   .gl-vc-shell{padding:14px 12px 12px}
-  /* Una slide per “pagina”: niente seconda colonna tagliata sul bordo */
-  .gl-carousel{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;padding-bottom:4px;flex-wrap:nowrap;gap:12px}
+  /* JS mostra 1 solo slot: carousel a larghezza piena, niente scroll orizzontale tra cloni */
+  .gl-carousel{
+    overflow:hidden;
+    flex-wrap:nowrap;
+    gap:0;
+    padding-bottom:0;
+    -webkit-overflow-scrolling:auto;
+  }
   .gl-slot{
-    flex:0 0 100%;
-    min-width:100%;
+    flex:1 1 100%;
+    min-width:0;
     max-width:100%;
-    scroll-snap-align:start;
-    scroll-snap-stop:always;
+  }
+  .gl-slot .gl-watch-link{
+    opacity:1;
+    transform:none;
+    color:var(--gl-muted);
   }
   .gl-title{font-size:13px}
   .gl-btn-label,.gl-count,.gl-divider{display:none}

@@ -4,7 +4,7 @@ title: "Project Z: 72H Siege Conquest CBT 04-18/05-07"
 subtitle: "Survive the 72-hour onslaught and reclaim the wasteland."
 date: 2026-04-20T00:00:00Z
 
-release_date: "2026"
+release_date: "2026-12-31"
 category: open world
 badge: "Beta"
 tags:

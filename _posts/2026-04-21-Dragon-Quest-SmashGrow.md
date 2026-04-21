@@ -2,10 +2,10 @@
 layout: post
 title: " Dragon Quest Smash/Grow"
 subtitle: "The Ultimate Roguelite Adventure Hits Mobile "
-date: 2026-03-11T00:00:00Z
-release_date: "2099-12-31"
+date: 2026-04-21T00:00:00Z
+release_date: "2026-04-21"
 category: RPG
-badge: Coming Soon
+badge: new
 tags:
  - RPG
  - DragonQuest
@@ -23,6 +23,9 @@ info:
 images:
   - https://i.ibb.co/zhdRnnG2/thumbnail-pv.jpg
   - https://i.ibb.co/yc1SLK9b/Dragon-Quest-Smash-Grow-Banner.jpg
+  - https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/DRAGON%20QUEST%20Smash/Grow%201.webp
+
+video_id: 74JS97lF2l8
 
 buttons:
   - label: "Play Store"

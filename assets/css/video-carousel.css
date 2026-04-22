@@ -74,6 +74,7 @@
 .gl-arrow--right{margin-left:10px}
 .gl-carousel{display:flex;gap:14px;flex:1;align-items:stretch;min-width:0}
 .gl-slot{flex:1;display:flex;flex-direction:column;transition:transform .28s cubic-bezier(.34,1.56,.64,1);min-width:0}
+.gl-slot[hidden]{display:none !important}
 @media (hover:hover){
   .gl-slot:hover{transform:translateY(-5px)}
 }

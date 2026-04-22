@@ -16,10 +16,10 @@ description: "Experience the rhythm of LDH Japan's top artists, featuring tracks
 hero_image: "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/SuperStar%20LDH%201.webp"
 
 info:
-genre: Music / Rhythm
-platform: Android / iOS
-developer: DalcomSoft Japan
-mode: Single-player / Online Rankings
+  genre: Music / Rhythm
+  platform: Android / iOS
+  developer: DalcomSoft Japan
+  mode: Single-player / Online Rankings
 
 images:
  - "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/SuperStar%20LDH%201.webp"

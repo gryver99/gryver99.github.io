@@ -26,6 +26,8 @@ images:
   - "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/Cards%20of%20Myth%202.webp"
   - "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/Cards%20of%20Myth%201.webp"
 
+video_id: lsDBFE2rXrI
+
 buttons:
   - label: "Play Store"
     url: "https://play.google.com/store/apps/details?id=com.nurdturd.myth"

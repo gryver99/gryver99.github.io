@@ -2,11 +2,11 @@
 layout: post
 title: "Neverness to Everness"
 subtitle: "The Next Generation of Urban Supernatural Open-World RPG"
-date: 2026-04-18T00:00:00Z
+date: 2026-04-29T00:00:00Z
 
 release_date: "2026-04-29"
 category: Open World
-badge: "Coming Soon"
+badge: "new"
 tags:
  - Hotta Studio
  - Open World

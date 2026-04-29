@@ -28,6 +28,8 @@ images:
   - https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/Neverness%20to%20Everness%202.webp
   - https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/Neverness%20to%20Everness%201.webp
 
+video_id: vUMAqtzwo3Y
+
 buttons:
   - label: "Official Site"
     url: "https://nte.perfectworld.com/en/"

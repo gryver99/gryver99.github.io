@@ -3,24 +3,29 @@ layout: post
 title: "Monster Pong: Pinball Roguelike"
 subtitle: "A High-Octane Fusion of Arcade Physics and Dungeon Crawling"
 date: 2026-04-29T14:58:00Z
+
 release_date: "2026-04-28"
 category: Pinball
-badge: "New"
+badge: "new"
 tags:
   - Pinball
   - Roguelike
 image: "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/monsterpong%202.webp"
 description: "Master the flippers and clear the dungeon in Monster Pong, a unique hybrid that combines classic pinball mechanics with deep roguelike progression."
+
 hero_image: "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/monsterpong%202.webp"
+
 info:
   genre: Pinball / Roguelike
   platform: Android
   developer: Pong Studio
   mode: Single-player
+
 images:
   - "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/monsterpong%201.webp"
   - "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/monsterpong%203.webp"
   - "https://vpwqcavxwfybgvdddzeu.supabase.co/storage/v1/object/public/post/monsterpong%202.webp"
+
 buttons:
   - label: "Taptap"
     url: "https://www.taptap.io/app/34004638"
